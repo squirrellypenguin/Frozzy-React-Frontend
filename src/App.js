@@ -5,7 +5,7 @@ import Main from './pages/main'
 import Shop from './pages/shop'
 import Nav from './components/nav'
 import React from "react"
-
+import Creem from "./pages/icecream"
 function App() {
   
   return (
@@ -20,6 +20,9 @@ function App() {
         </Route>
         <Route path="/checkout">
           <Checkout />
+        </Route>
+        <Route path="/icecream">
+          <Creem />
         </Route>
       </Switch>
       <h1>Frozzy</h1>
