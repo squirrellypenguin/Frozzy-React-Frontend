@@ -13,6 +13,9 @@ const Nav = (props) => {
             <Link to="/checkout">
                 <div>Checkout</div>
             </Link>
+            <Link to="/icecream">
+                <div>Ice Cream</div>
+            </Link>
         </div>
     )
 }
