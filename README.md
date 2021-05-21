@@ -15,11 +15,11 @@ Providing hyper-local on-demand ice-cream delivery in the high heat environment 
 
 * [Font](https://fonts.google.com/specimen/Montserrat)
 
-* [UI Overview](https://www.behance.net/gallery/116803029/Frizzy-ice-cream-app-case-study?tracking_source=search_projects_recommended%7Capp)
 
 
 ## Wireframe Layout Design
 
+* [UI Overview](https://www.behance.net/gallery/116803029/Frizzy-ice-cream-app-case-study?tracking_source=search_projects_recommended%7Capp)
 
 ## Wireframe Component Design
 
