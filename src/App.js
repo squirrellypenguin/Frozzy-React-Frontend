@@ -4,7 +4,7 @@ import Checkout from './pages/checkout'
 import Main from './pages/main'
 import Shop from './pages/shop'
 import Nav from './components/nav'
-
+import React from "react"
 
 function App() {
   
