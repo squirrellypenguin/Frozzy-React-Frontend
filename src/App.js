@@ -4,28 +4,124 @@ import Checkout from './pages/checkout'
 import Main from './pages/main'
 import Shop from './pages/shop'
 import Nav from './components/nav'
-import React from "react"
-import Creem from "./pages/icecream"
+import React from 'react';
+
+
 function App() {
-  
+  const url = "https://frozzybe.herokuapp.com"
+
+  // State that will hold shops 
+  const [shops, setShops] = React.useState([])
+  // State to hold ice cream flavors 
+  const [creems, setCreems] = React.useState([])
+
+  // variable to hold to Empty flavor 
+  const emptyCreem = {
+    rating: [],
+    name: "",
+    img:  "",
+    story: "",
+    cost: 0,
+  }
+
+  // state that represents selected flavor 
+  const [selectedCreem, setSelectedCreem] = React.useState(emptyCreem)
+
+  // function that will get all the flavors
+  const getCreems = () => {
+    fetch(url + "/creem/")
+    .then((response) => response.json())
+    .then((data) => {
+      setCreems(data)
+    })
+  }
+
+  // function to get all shops 
+  const getShops = () => {
+    fetch(url + "/store/")
+    .then((response) => response.json())
+    .then((data) => {
+      setShops(data)
+      console.log("shops-data",data)
+    })
+  }
+  //useEffect to get shop data 
+  React.useEffect(() =>{
+    getShops()
+  }, [])
+
+  //useEffect to get the flavor data right away
+  React.useEffect(() => {
+    getCreems()
+  }, [])
+
+  // handleCreate function for form submission of 
+ const handleCreate = (newCreem) => {
+    fetch(url + "/creem/", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json"
+      },
+      body: JSON.stringify(newCreem)
+    })
+    .then(() => getCreems())
+  }
+
+  // handleUpdate function for when edit form is sumbitted 
+  const handleUpdate = (creem) => {
+    fetch(url + "/creem/" + creem._id, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(creem)
+    })
+    .then(() => getCreems())
+  }
+
+  // function to specifiy the flavor being updated 
+  const selectCreem = (creem) => {
+    setSelectedCreem(creem)
+  }
+
+  // function to specify which shop is selected
+
+  // function to delete individual flavors
+  const deleteCreem = (creem) => {
+    fetch(url + "/creem/" + creem._id, {
+      method: "delete"
+    })
+    .then(() => {
+      getCreems()
+    })
+  }
+
   return (
     <div className="App">
       <Nav />
       <Switch>
-        <Route exact path="/">
-          <Main />
-        </Route>
-        <Route exact path="/shop">
-          <Shop />
-        </Route>
-        <Route path="/checkout">
-          <Checkout />
-        </Route>
-        <Route path="/icecream">
-          <Creem />
-        </Route>
+        <Route exact path="/" render={(rp) =>
+          <Main
+          {...rp}
+          shops={shops}
+           />} />
+        <Route exact path="/shop" render={(rp) => 
+          <Shop
+          {...rp}
+          shops={shops} 
+          />} />
+        <Route path="/checkout" render={(rp) =>
+          <Checkout 
+          {...rp}
+          creem={creems}
+          selectedCreem={selectedCreem}
+          handleSubmit={handleUpdate}
+          deleteCreem={deleteCreem}
+          selectCreem={selectCreem}
+          />} />
+ 
       </Switch>
-      <h1>Frozzy</h1>
+      
     </div>
   );
 }
