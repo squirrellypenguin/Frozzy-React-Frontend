@@ -1,8 +1,15 @@
+:root {
+  --main-white:  #ededed;
+  --main-black: #242424;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Montserrat';
+
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +17,62 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+#page-container{
+border: 2px solid red;
+background-color: var(--main-black);
+height: 900px;
+}
+
+
+#ic-image-container {
+  /* border: 2px solid red; */
+  /* margin: 0 auto;  */
+  /* width: 100vw;  */
+  /* overflow: hidden; */
+}
+
+.photo {
+  /* border: 2px solid red; */
+  width: 100%;
+  height: auto;
+  background-image: cover;
+}
+
+.fav-icon {
+  border: 2px solid red;
+  position: relative;
+  bottom: 25px;
+  left: 310px;
+  transform: scale(1.7);
+  filter: drop-shadow(0px 3px 1.5px red);
+}
+
+#id-name{
+  margin: 0;
+}
+
+#ic-name h2{
+  /* border: 2px solid red; */
+  margin: 0 0 0 10px;
+  position: relative;
+  bottom: 15px;
+  width: 80%;
+  color: var(--main-white);
+}
+#ic-stars-container{
+  /* border: 2px solid red; */
+  width: 60%;
+  /* margin: 0; */
+  padding: 0 0 0 6px;
+  position: relative;
+  bottom: 17px;
+}
+
+#ic-stars img {
+  /* border: 2px solid green; */
+  /* margin: 0; */
+  /* padding: 0; */
+  /* transform: scale(.4); */
 }
