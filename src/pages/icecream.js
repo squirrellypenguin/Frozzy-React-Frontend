@@ -3,23 +3,23 @@ import {useEffect} from "react"
 import {useState} from "react"
 
 
-const Shop = (props) => {
-  let [shops, setShops] = useState([])
-  let url = "https://frozzybe.herokuapp.com/store/"
-  const getShops = async (url) => {
+const Creem = (props) => {
+  let [creems, setCreems] = useState([])
+  let url = "https://frozzybe.herokuapp.com/creem/"
+  const getCreems = async (url) => {
     const response = await fetch(url);
     const data = await response.json();
     // setHeroes(data.data);
-    setShops(data)
+    setCreems(data)
   };
   useEffect(() => {
-    getShops(url);
+    getCreems(url);
   }, []);
 
 
 
-  let shop = shops.map((shop, index) => {
-     console.log(shop.name);
+  let creem = creems.map((creem, index) => {
+     console.log(creem.name);
     //  var average = shop.rating.reduce(function (average, value, _, array){
     //  console.log(average, value,)
 
@@ -28,10 +28,10 @@ const Shop = (props) => {
     // });
     //Take a b in array and add starting with 0 then deivide by array.length
 
-    let average = shop.rating.reduce(function (sum, value) {
+    let average = creem.rating.reduce(function (sum, value) {
       console.log(sum, value )
       return sum + value;
-  }, 0) / shop.rating.length;
+  }, 0) / creem.rating.length;
 
 console.log(average);
 
@@ -39,19 +39,20 @@ console.log(average);
       <div  key={index}>
         {/* <img src={hero.images.sm} alt="small-profile-picture" /> */}
         <div className="small-container">
-          <img src={shop.img} />
-          <h2>{shop.name}</h2>
-          <h2>{shop.location}</h2>
-          <h2>{shop.description}</h2>
-          <h2>Rating: {average}</h2>
+          <img src={creem.img} />
+          <h2>{creem.name}</h2>
+          <h2>{creem.story}</h2>
+          <h2>{creem.description}</h2>
+          <h2>{creem.cost}</h2>
+          <h2>Rating: {Math.ceil(average)}</h2>
         </div>
       </div>
     );
   });
   return (
    
-   <div>{shop} </div>
+   <div>{creem} </div>
   )
 };
 
-export default Shop;
+export default Creem;
