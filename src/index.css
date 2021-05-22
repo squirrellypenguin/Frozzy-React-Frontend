@@ -1,13 +1,147 @@
+:root {
+  --main-white:  #ededed;
+  --main-black: #242424;
+  --main-grey: #909294;
+}
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  margin: 0; /* <-- Codys code */
+  font-family: 'Montserrat'; /* <-- Codys code */
+
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+} */
+
+
+/* ---------------------- Upper image area ------------------------- */
+#page-container{
+/* border: 2px solid red; */
+background-color: var(--main-black);
+height: 1800px;
+}
+
+
+#ic-image-container {
+  /* border: 2px solid red; */
+  /* margin: 0 auto;  */
+  /* width: 100vw;  */
+  /* overflow: hidden; */
+}
+
+.photo {
+  /* border: 2px solid red; */
+  width: 100%;
+  height: auto;
+  background-image: cover;
+}
+
+.fav-icon {
+  /* border: 2px solid red; */
+  position: relative;
+  bottom: 25px;
+  left: 310px;
+  transform: scale(1.7);
+  filter: drop-shadow(0px 3px 1.5px red);
+}
+
+/* ---------------------- Middle Name/price/star section-------------------- */
+#ic-name h2{
+  /* border: 2px solid red; */
+  margin: 0 0 0 10px;
+  position: relative;
+  bottom: 15px;
+  width: 80%;
+  color: var(--main-white);
+}
+#ic-stars-container{
+  /* border: 2px solid red; */
+  width: 100%;
+  /* margin: 0; */
+  padding: 0 0 0 6px;
+  position: relative;
+  bottom: 17px;
+}
+
+#ic-stars img {
+  /* border: 2px solid red; */
+  transform: scale(.7);
+}
+#ic-stars img:hover {
+  transform: scale(.85);
+}
+
+#ic-price {
+  /* border: 2px solid red; */
+  color: var(--main-white);
+  width: 150px;
+  text-align: center;
+  position: relative;
+  left: 210px;
+  bottom: 40px;
+}
+
+/* ---------------------- Middle Description area-------------------- */
+#ic-description-container {
+  /* border: 2px solid red; */
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom:15px;
+}
+
+#ic-description-heading {
+  /* border: 2px solid red; */
+  color: var(--main-white);
+}
+
+#ic-description-copy {
+  /* border: 2px solid red; */
+  color: var(--main-grey);
+  padding-bottom: 30px;
+  border-bottom: 1px solid var(--main-grey);
+}
+
+/* ---------------------- Lower Customize area-------------------- */
+#ic-customize-container {
+  /* border: 2px solid red; */
+  width: 90%;
+  height: 200px;
+  margin: 0 auto;
+  padding-bottom:15px;
+}
+
+#ic-customize-heading {
+  /* border: 2px solid red; */
+  width: 90%;
+  margin: 0; 
+  color: var(--main-white);
+  margin-bottom: 20px;
+}
+
+#ic-customize-dropdown-container {
+  /* border: 2px solid red;  */
+}
+
+ .ic-customize-dropdown {
+   /* border: 2px solid red; */
+   display: block;
+   width: 100%;
+   height: 50px;
+   color: var(--main-grey);
+   text-align: center;
+   font-size: 1em; 
+   border-radius: 5px;
+   background-color: var(--main-white);
+   margin: 10px 0 10px 0;
+   font-family: 'Montserrat'; 
+ }
+ .ic-customize-dropdown:hover {
+ background: var(--main-black);
 }
