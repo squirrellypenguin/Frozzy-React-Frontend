@@ -1,4 +1,4 @@
-body {
+/* body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,4 +10,28 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+} */
+
+
+/* /////////////////////// DELETE BEFORE PUSHING!!!!!/////////////////  */
+:root {
+  --main-white:  #ededed;
+  --main-black: #242424;
+  --main-grey: #909294;
+}
+
+
+#main-container {
+  /* border: 2px solid red; */
+  height: 600px;
+  background: var(--main-black);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+#main-background {
+  /* border: 2px solid hotpink; */
+  /* height: 300px; */
+  /* transform: scale(1.3); */
 }
