@@ -2,6 +2,8 @@ import { Switch,Route } from 'react-router-dom';
 import './App.css';
 import Checkout from './pages/checkout'
 import Main from './pages/main'
+import Creem from './pages/icecream'
+
 import Shop from './pages/shop'
 import Nav from './components/nav'
 import React from 'react';
@@ -119,7 +121,11 @@ function App() {
           deleteCreem={deleteCreem}
           selectCreem={selectCreem}
           />} />
- 
+          <Route exact path="/icecream" render={(rp) => 
+          <Creem
+          {...rp}
+          creems={creems} 
+          />} />
       </Switch>
       
     </div>
