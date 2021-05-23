@@ -16,6 +16,8 @@ function App() {
   const [shops, setShops] = React.useState([])
   // State to hold ice cream flavors 
   const [creems, setCreems] = React.useState([])
+  // State for rating 
+  const [ratings, setRatings] = React.useState([])
 
   // variable to hold to Empty flavor 
   const emptyCreem = {
@@ -26,8 +28,15 @@ function App() {
     cost: 0,
   }
 
+  //empty rating variable 
+  const emptyRating = {
+    rating: 0
+  }
   // state that represents selected flavor 
   const [selectedCreem, setSelectedCreem] = React.useState(emptyCreem)
+
+  // state for rating 
+  const [selectedRating, setselectedRating] = React.useState(emptyRating)
 
   // function that will get all the flavors
   const getCreems = () => {
@@ -44,7 +53,16 @@ function App() {
     .then((response) => response.json())
     .then((data) => {
       setShops(data)
-      console.log("shops-data",data)
+    })
+  }
+
+  // function to get ratings
+  const getRating = () => {
+    fetch(url + "/creem/" + "/rating/")
+    .then((response) => response.json())
+    .then((data) => {
+      setRatings(data)
+      console.log("ratings", setRatings)
     })
   }
   //useEffect to get shop data 
@@ -81,10 +99,26 @@ function App() {
     .then(() => getCreems())
   }
 
+  // handleUpdate function for form submission on rating
+  const handleRatingUpdate = (rating,id) => {
+    fetch(url + "/creem/rating/", id, {
+      method: "PUT",
+      headers: {
+        "Content-Type":"application/json"
+      },
+      body: JSON.stringify(rating)
+    })
+    .then(() => getRating())
+  }
+
   // function to specifiy the flavor being updated 
   const selectCreem = (creem) => {
     setSelectedCreem(creem)
   }
+
+  //function to specify which rating is being updated
+  const selectRating = (rating) => {setselectedRating(rating)}
+ 
 
   // function to specify which shop is selected
 
@@ -124,6 +158,8 @@ function App() {
           <Route exact path="/icecream" render={(rp) => 
           <Creem
           {...rp}
+          handleRatingSubmit={handleRatingUpdate}
+          selectRating={selectRating}
           creems={creems} 
           />} />
       </Switch>
