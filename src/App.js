@@ -16,7 +16,8 @@ function App() {
   const [shops, setShops] = React.useState([])
   // State to hold ice cream flavors 
   const [creems, setCreems] = React.useState([])
-  // State for rating 
+
+  //state to hold ratings
   const [ratings, setRatings] = React.useState([])
 
   // variable to hold to Empty flavor 
@@ -28,6 +29,7 @@ function App() {
     cost: 0,
   }
 
+
   //empty rating variable 
   const emptyRating = {
     rating: 0
@@ -38,12 +40,22 @@ function App() {
   // state for rating 
   const [selectedRating, setselectedRating] = React.useState(emptyRating)
 
+
   // function that will get all the flavors
   const getCreems = () => {
     fetch(url + "/creem/")
     .then((response) => response.json())
     .then((data) => {
       setCreems(data)
+    })
+  }
+
+  // function that will get all the flavors
+  const getRatings = () => {
+    fetch(url + "/creem/rating")
+    .then((response) => response.json())
+    .then((data) => {
+      setRatings(data)
     })
   }
 
@@ -65,6 +77,7 @@ function App() {
       console.log("ratings", setRatings)
     })
   }
+
   //useEffect to get shop data 
   React.useEffect(() =>{
     getShops()
@@ -99,6 +112,7 @@ function App() {
     .then(() => getCreems())
   }
 
+
   // handleUpdate function for form submission on rating
   const handleRatingUpdate = (rating,id) => {
     fetch(url + "/creem/rating/", id, {
@@ -116,12 +130,10 @@ function App() {
     setSelectedCreem(creem)
   }
 
+
   //function to specify which rating is being updated
   const selectRating = (rating) => {setselectedRating(rating)}
  
-
-  // function to specify which shop is selected
-
   // function to delete individual flavors
   const deleteCreem = (creem) => {
     fetch(url + "/creem/" + creem._id, {
@@ -155,15 +167,19 @@ function App() {
           deleteCreem={deleteCreem}
           selectCreem={selectCreem}
           />} />
-          <Route exact path="/icecream" render={(rp) => 
+
+         <Route exact path="/icecream" render={(rp) => 
           <Creem
           {...rp}
           handleRatingSubmit={handleRatingUpdate}
           selectRating={selectRating}
           creems={creems} 
+          selectedRating={selectedRating}
+          handleSubmit={handleUpdate}
+          selectRating={selectRating}
+
           />} />
       </Switch>
-      
     </div>
   );
 }
