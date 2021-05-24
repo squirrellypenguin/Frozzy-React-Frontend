@@ -38,15 +38,67 @@ console.log(average);
     return (
       <div  key={index}>
         {/* <img src={hero.images.sm} alt="small-profile-picture" /> */}
-        <div className="small-container">
-          <img src={creem.img} />
+        <div id='page-container'>
+        <div id='ic-image-container'>
+          <img src={creem.img} id='ic-photo'/>
+          <div>
+            <img src="https://res.cloudinary.com/dhad6e9gj/image/upload/v1621617894/Frozzy%20Project/Favorite_Icon-01-01_wqwwih.png" className='fav-icon'/>
+          </div>
+        </div>
+        <article id='ic-name'>
           <h2>{creem.name}</h2>
-          <h2>{creem.story}</h2>
-          <h2>{creem.description}</h2>
-          <h2>{creem.cost}</h2>
-          <h2>Rating: {Math.ceil(average)}</h2>
+        </article>
+        <div id='ic-stars-container'>
+          <div id='ic-stars'>
+            <img src='https://res.cloudinary.com/dhad6e9gj/image/upload/v1621617727/Frozzy%20Project/Star_Icon-01-01_mzyxnw.png'/>
+            <img src='https://res.cloudinary.com/dhad6e9gj/image/upload/v1621617727/Frozzy%20Project/Star_Icon-01-01_mzyxnw.png'/>
+            <img src='https://res.cloudinary.com/dhad6e9gj/image/upload/v1621617727/Frozzy%20Project/Star_Icon-01-01_mzyxnw.png'/>
+            <img src='https://res.cloudinary.com/dhad6e9gj/image/upload/v1621617727/Frozzy%20Project/Star_Icon-01-01_mzyxnw.png'/>
+            <img src='https://res.cloudinary.com/dhad6e9gj/image/upload/v1621617727/Frozzy%20Project/Star_Icon-01-01_mzyxnw.png'/>
+            <div>
+              <h1 id='ic-price'>${creem.cost}</h1>
+            </div>
+          </div>
+          <article id= 'ic-description-container'>
+            <h3 id='ic-description-heading'>Description</h3>
+            <p id='ic-description-copy'>{creem.description}</p>
+          </article>
+          <section id='ic-customize-container'>
+            <h3 id='ic-customize-heading'>Customize your Order</h3>
+            <div id='ic-customize-dropdown-container'>
+              <select className='ic-customize-dropdown'>
+                <option value='main'>- Select the size of Tub - </option>
+                <option value='one'>Small Tub</option>
+                <option value='two'>Medium Tub</option>
+                <option value='three'>Large Tub</option>
+              </select>
+            </div>
+            <div id='ic-customize-dropdown-container'>
+              <select className='ic-customize-dropdown'>
+                <option value='main'>Select the Ingredients</option>
+                <option value='one'>Peanuts</option>
+                <option value='two'>Sprinkles</option>
+                <option value='three'>Pecans</option>
+                <option value='four'>Banana</option>
+                <option value='four'>Chocolate Chunks</option>
+                <option value='four'>Malt Pieces</option>
+              </select>
+            </div>
+          </section>
         </div>
       </div>
+        </div>
+      // <div  key={index}>
+      //   {/* <img src={hero.images.sm} alt="small-profile-picture" /> */}
+      //   <div className="small-container">
+      //     <img src={creem.img} />
+      //     <h2>{creem.name}</h2>
+      //     <h2>{creem.story}</h2>
+      //     <h2>{creem.description}</h2>
+      //     <h2>{creem.cost}</h2>
+      //     <h2>Rating: {Math.ceil(average)}</h2>
+      //   </div>
+      // </div>
     );
   });
   return (
