@@ -93,7 +93,8 @@ body {
 #main-login-button:hover {
   background: var(--main-black);
   border: 1px solid var(--main-grey)
-/* ---------------------- Upper image area ------------------------- */
+}
+
 #page-container{
 /* border: 2px solid red; */
 background-color: var(--main-black);
