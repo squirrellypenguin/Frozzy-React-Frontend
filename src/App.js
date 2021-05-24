@@ -156,6 +156,7 @@ function App() {
           deleteCreem={deleteCreem}
           selectCreem={selectCreem}
           />} />
+
          <Route exact path="/icecream" render={(rp) => 
           <Creem
           {...rp}
@@ -163,6 +164,7 @@ function App() {
           selectedRating={selectedRating}
           handleSubmit={handleUpdate}
           selectRating={selectRating}
+
           />} />
       </Switch>
     </div>
