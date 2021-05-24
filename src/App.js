@@ -16,6 +16,8 @@ function App() {
   const [shops, setShops] = React.useState([])
   // State to hold ice cream flavors 
   const [creems, setCreems] = React.useState([])
+  //state to hold ratings
+  const [ratings, setRatings] = React.useState([])
 
   // variable to hold to Empty flavor 
   const emptyCreem = {
@@ -26,8 +28,16 @@ function App() {
     cost: 0,
   }
 
+  // variable to hold to Empty flavor 
+  const emptyRating = {
+    rating: 0
+  }
+
   // state that represents selected flavor 
   const [selectedCreem, setSelectedCreem] = React.useState(emptyCreem)
+
+  // state that represents selected rating
+  const [selectedRating, setSelectedRating] = React.useState(emptyRating)
 
   // function that will get all the flavors
   const getCreems = () => {
@@ -35,6 +45,15 @@ function App() {
     .then((response) => response.json())
     .then((data) => {
       setCreems(data)
+    })
+  }
+
+  // function that will get all the flavors
+  const getRatings = () => {
+    fetch(url + "/creem/rating")
+    .then((response) => response.json())
+    .then((data) => {
+      setRatings(data)
     })
   }
 
@@ -47,6 +66,7 @@ function App() {
       console.log("shops-data",data)
     })
   }
+
   //useEffect to get shop data 
   React.useEffect(() =>{
     getShops()
@@ -81,12 +101,27 @@ function App() {
     .then(() => getCreems())
   }
 
+  // handleUpdate function for when rating is updated
+  const handleRatingUpdate = (rating,id) => {
+    fetch(url + "/creem/rating" + id, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(rating)
+    })
+    .then(() => getRatings())
+  }
+
   // function to specifiy the flavor being updated 
   const selectCreem = (creem) => {
     setSelectedCreem(creem)
   }
 
-  // function to specify which shop is selected
+  // function to specifiy the rating being updated
+  const selectRating = (rating) => {
+    setSelectedRating(rating)
+  }
 
   // function to delete individual flavors
   const deleteCreem = (creem) => {
@@ -121,13 +156,17 @@ function App() {
           deleteCreem={deleteCreem}
           selectCreem={selectCreem}
           />} />
-          <Route exact path="/icecream" render={(rp) => 
+
+         <Route exact path="/icecream" render={(rp) => 
           <Creem
           {...rp}
           creems={creems} 
+          selectedRating={selectedRating}
+          handleSubmit={handleUpdate}
+          selectRating={selectRating}
+
           />} />
       </Switch>
-      
     </div>
   );
 }
