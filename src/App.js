@@ -51,13 +51,13 @@ function App() {
   }
 
   // function that will get all the flavors
-  const getRatings = () => {
-    fetch(url + "/creem/rating")
-    .then((response) => response.json())
-    .then((data) => {
-      setRatings(data)
-    })
-  }
+  // const getRatings = () => {
+  //   fetch(url + "/creem/rating")
+  //   .then((response) => response.json())
+  //   .then((data) => {
+  //     setRatings(data)
+  //   })
+  // }
 
   // function to get all shops 
   const getShops = () => {
@@ -70,7 +70,7 @@ function App() {
 
   // function to get ratings
   const getRating = () => {
-    fetch(url + "/creem/" + "/rating/")
+    fetch(url + "/creem" + "/rating")
     .then((response) => response.json())
     .then((data) => {
       setRatings(data)
@@ -102,7 +102,7 @@ function App() {
 
   // handleUpdate function for when edit form is sumbitted 
   const handleUpdate = (creem) => {
-    fetch(url + "/creem/" + creem._id, {
+    fetch(url + "/creem/" + creem, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"
@@ -114,13 +114,14 @@ function App() {
 
 
   // handleUpdate function for form submission on rating
-  const handleRatingUpdate = (rating,id) => {
-    fetch(url + "/creem/rating/", id, {
+  const handleRatingUpdate = (rating, id) => {
+    let body = { rating: rating}
+    fetch(url + "/creem/rating/" + id, {
       method: "PUT",
       headers: {
         "Content-Type":"application/json"
       },
-      body: JSON.stringify(rating)
+      body: JSON.stringify(body)
     })
     .then(() => getRating())
   }
@@ -132,7 +133,11 @@ function App() {
 
 
   //function to specify which rating is being updated
-  const selectRating = (rating) => {setselectedRating(rating)}
+  const selectRating = (rating, id) => {
+    console.log("lifted State")
+    console.log(id, rating)
+   handleRatingUpdate(rating, id)
+  }
  
   // function to delete individual flavors
   const deleteCreem = (creem) => {
@@ -174,9 +179,9 @@ function App() {
           handleRatingSubmit={handleRatingUpdate}
           selectRating={selectRating}
           creems={creems} 
-          selectedRating={selectedRating}
+          // selectedRating={selectedRating}
           handleSubmit={handleUpdate}
-          selectRating={selectRating}
+          // selectRating={selectRating}
 
           />} />
       </Switch>

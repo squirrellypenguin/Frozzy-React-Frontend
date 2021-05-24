@@ -5,6 +5,7 @@ import {useState} from "react"
 
 const Creem = (props) => {
   let [creems, setCreems] = useState([])
+  // console.log(props)
   let url = "https://frozzybe.herokuapp.com/creem/"
   const getCreems = async (url) => {
     const response = await fetch(url);
@@ -18,8 +19,9 @@ const Creem = (props) => {
 
 
 
+
   let creem = creems.map((creem, index) => {
-     console.log(creem.name);
+    //  console.log(creem.name);
     //  var average = shop.rating.reduce(function (average, value, _, array){
     //  console.log(average, value,)
 
@@ -29,11 +31,11 @@ const Creem = (props) => {
     //Take a b in array and add starting with 0 then deivide by array.length
 
     let average = creem.rating.reduce(function (sum, value) {
-      console.log(sum, value )
+      // console.log(sum, value )
       return sum + value;
   }, 0) / creem.rating.length;
 
-console.log(average);
+// console.log(average);
 
     return (
       <div  key={index}>
@@ -50,11 +52,11 @@ console.log(average);
         </article>
         <div id='ic-stars-container'>
           <div id='ic-stars'>
-            <img src='https://res.cloudinary.com/dhad6e9gj/image/upload/v1621617727/Frozzy%20Project/Star_Icon-01-01_mzyxnw.png'/>
-            <img src='https://res.cloudinary.com/dhad6e9gj/image/upload/v1621617727/Frozzy%20Project/Star_Icon-01-01_mzyxnw.png'/>
-            <img src='https://res.cloudinary.com/dhad6e9gj/image/upload/v1621617727/Frozzy%20Project/Star_Icon-01-01_mzyxnw.png'/>
-            <img src='https://res.cloudinary.com/dhad6e9gj/image/upload/v1621617727/Frozzy%20Project/Star_Icon-01-01_mzyxnw.png'/>
-            <img src='https://res.cloudinary.com/dhad6e9gj/image/upload/v1621617727/Frozzy%20Project/Star_Icon-01-01_mzyxnw.png'/>
+            <img onClick={() => props.selectRating(1, creem._id)} src='https://res.cloudinary.com/dhad6e9gj/image/upload/v1621617727/Frozzy%20Project/Star_Icon-01-01_mzyxnw.png'/>
+            <img onClick={() => props.selectRating(2, creem._id)}  src='https://res.cloudinary.com/dhad6e9gj/image/upload/v1621617727/Frozzy%20Project/Star_Icon-01-01_mzyxnw.png'/>
+            <img  onClick={() => props.selectRating(3, creem._id)}  src='https://res.cloudinary.com/dhad6e9gj/image/upload/v1621617727/Frozzy%20Project/Star_Icon-01-01_mzyxnw.png'/>
+            <img  onClick={() => props.selectRating(4, creem._id)} src='https://res.cloudinary.com/dhad6e9gj/image/upload/v1621617727/Frozzy%20Project/Star_Icon-01-01_mzyxnw.png'/>
+            <img  onClick={() => props.selectRating(5, creem._id)} src='https://res.cloudinary.com/dhad6e9gj/image/upload/v1621617727/Frozzy%20Project/Star_Icon-01-01_mzyxnw.png'/>
             <div>
               <h1 id='ic-price'>${creem.cost}</h1>
             </div>
