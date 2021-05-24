@@ -87,6 +87,7 @@ const Creem = (props) => {
               </select>
             </div>
           </section>
+          <button onClick={() => props.selectCart(creem, index)} >Maybe</button>
         </div>
       </div>
         </div>

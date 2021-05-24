@@ -36,10 +36,15 @@ function App() {
   }
   // state that represents selected flavor 
   const [selectedCreem, setSelectedCreem] = React.useState(emptyCreem)
-
+const [cart, setCart] = React.useState([])
   // state for rating 
   const [selectedRating, setselectedRating] = React.useState(emptyRating)
 
+  const selectCart = (creem, index) => {
+    console.log("lifted State", creem)
+    setCart([...cart, creem])
+  //  handleRatingUpdate(rating, id)
+  }
 
   // function that will get all the flavors
   const getCreems = () => {
@@ -178,6 +183,7 @@ function App() {
           {...rp}
           handleRatingSubmit={handleRatingUpdate}
           selectRating={selectRating}
+          selectCart={selectCart}
           creems={creems} 
           // selectedRating={selectedRating}
           handleSubmit={handleUpdate}
