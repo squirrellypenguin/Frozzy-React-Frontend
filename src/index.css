@@ -1,13 +1,14 @@
+
+
 :root {
   --main-white:  #ededed;
   --main-black: #242424;
   --main-grey: #909294;
+  --main-red: #EE4540;
 }
-
 body {
   margin: 0; /* <-- Codys code */
   font-family: 'Montserrat'; /* <-- Codys code */
-
   /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif; */
@@ -15,12 +16,84 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
 
+#main-image-container {
+  /* border: 2px solid red; */
+  height: 600px;
+  background: var(--main-black);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+}
 
+/* ----------- can delete BLACK-BACKGROUND when moved into JSX -------------- */
+#black-background {
+  /* border: 2px solid hotpink; */
+  background: var(--main-black);
+  height: 1000px;
+}
+/* ----------- can delete BLACK-BACKGROUND when moved into JSX -------------- */
+
+#main-background {
+  /* border: 2px solid hotpink; */
+  /* height: 1500px; */
+  /* transform: scale(1.3); */
+}
+
+#main-logo-container {
+  /* border: 2px solid hotpink; */
+  display: flex;
+  justify-content: center;
+  position: relative;
+  bottom: 350px;
+  overflow: hidden;
+  width: 100%;
+  transform: scale(.7);
+}
+
+#main-logo {
+  /* border: 2px solid rgb(47, 226, 236); */
+  transform: scale(.7);
+}
+
+#main-greeting-container {
+  /* border: 2px solid red; */
+  position: relative;
+  bottom: 230px;
+  color: var(--main-grey);
+  font-family: 'Montserrat'; 
+  font-size: .7em;
+  text-align: center;
+  width: 60%;
+  margin: 0 auto; 
+}
+
+#main-login-button-container {
+  /* border: 2px solid red; */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 60%;
+  position:relative;
+  bottom: 200px;
+}
+#main-login-button {
+  /* border: 2px solid red; */
+  /* display: flex; */
+  /* justify-content: center; */
+  border: none;
+  height: 40px;
+  border-radius: 20px;
+  background: var(--main-red);
+  color: var(--main-white);
+  font-family: 'Montserrat'; 
+}
+#main-login-button:hover {
+  background: var(--main-black);
+  border: 1px solid var(--main-grey)
+z=======
 /* ---------------------- Upper image area ------------------------- */
 #page-container{
 /* border: 2px solid red; */
@@ -73,75 +146,3 @@ height: 1800px;
 #ic-stars img {
   /* border: 2px solid red; */
   transform: scale(.7);
-}
-#ic-stars img:hover {
-  transform: scale(.85);
-}
-
-#ic-price {
-  /* border: 2px solid red; */
-  color: var(--main-white);
-  width: 150px;
-  text-align: center;
-  position: relative;
-  left: 210px;
-  bottom: 40px;
-}
-
-/* ---------------------- Middle Description area-------------------- */
-#ic-description-container {
-  /* border: 2px solid red; */
-  width: 90%;
-  margin: 0 auto;
-  padding-bottom:15px;
-}
-
-#ic-description-heading {
-  /* border: 2px solid red; */
-  color: var(--main-white);
-}
-
-#ic-description-copy {
-  /* border: 2px solid red; */
-  color: var(--main-grey);
-  padding-bottom: 30px;
-  border-bottom: 1px solid var(--main-grey);
-}
-
-/* ---------------------- Lower Customize area-------------------- */
-#ic-customize-container {
-  /* border: 2px solid red; */
-  width: 90%;
-  height: 200px;
-  margin: 0 auto;
-  padding-bottom:15px;
-}
-
-#ic-customize-heading {
-  /* border: 2px solid red; */
-  width: 90%;
-  margin: 0; 
-  color: var(--main-white);
-  margin-bottom: 20px;
-}
-
-#ic-customize-dropdown-container {
-  /* border: 2px solid red;  */
-}
-
- .ic-customize-dropdown {
-   /* border: 2px solid red; */
-   display: block;
-   width: 100%;
-   height: 50px;
-   color: var(--main-grey);
-   text-align: center;
-   font-size: 1em; 
-   border-radius: 5px;
-   background-color: var(--main-white);
-   margin: 10px 0 10px 0;
-   font-family: 'Montserrat'; 
- }
- .ic-customize-dropdown:hover {
- background: var(--main-black);
-}
