@@ -9,7 +9,7 @@ const Main = (props) => {
   return (
    <div>
       <h1>Frizzy</h1>
-      <Link to="/shops">
+      <Link to="/shop">
       <button>See Shops</button>
       </Link>
    </div> 
