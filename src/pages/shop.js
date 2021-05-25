@@ -68,7 +68,6 @@ console.log(average);
   return (
    
    <div>{shop} 
-   <Footer />
    </div>
   )
 };
