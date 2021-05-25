@@ -17,10 +17,11 @@ console.log(props.users)
       <div  key={index}>
         {/* <img src={hero.images.sm} alt="small-profile-picture" /> */}
         <div className="small-container">
-        <h2>{user.user} User {index + 1} {user.first} {user.last}</h2>
+        <h2>{user.user}</h2>
+        <h2>{user.first} {user.last}</h2>
         
-          <h3>{user.phone}</h3>
-          <h3>{user.email}</h3>
+          <h3>Telephone: {user.phone}</h3>
+          <h3>Email: {user.email}</h3>
           <h3>{user.address} {user.city}</h3>
           <h3>{user.state} {user.zip}</h3>
           <button id="edit" onClick={() => {
