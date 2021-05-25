@@ -80,8 +80,9 @@ body {
   position:relative;
   bottom: 200px;
 }
+
 #main-login-button {
-  /* border: 2px solid red; */
+  /* border: 2px solid hotpink; */
   /* display: flex; */
   /* justify-content: center; */
   border: none;
@@ -90,7 +91,9 @@ body {
   background: var(--main-red);
   color: var(--main-white);
   font-family: 'Montserrat'; 
+  padding: 0 20px;
 }
+
 #main-login-button:hover {
   background: var(--main-black);
   border: 1px solid var(--main-grey)
