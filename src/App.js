@@ -60,7 +60,12 @@ function App() {
     rating: 0
   }
 
-
+  const emptyUser = {
+    
+    last: "",
+    img:  ""
+    
+  }
 
 
   // state that represents selected flavor 
@@ -133,7 +138,18 @@ const [cart, setCart] = React.useState([])
     })
     .then(() => getCreems())
   }
-
+  const handleUser = (newUser) => {
+    console.log("state lifted")
+    console.log(newUser)
+    fetch(url + "/user/", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json"
+      },
+      body: JSON.stringify(newUser)
+    })
+    .then(() => getUsers())
+  }
   // handleUpdate function for when edit form is sumbitted 
   const handleUpdate = (creem) => {
     fetch(url + "/creem/" + creem, {
@@ -237,6 +253,18 @@ const [cart, setCart] = React.useState([])
           <User  {...rp} users={users}    selectedEdit={selectedEdit}    deleteUser={deleteUser}   />
 
 } />
+    <Route
+            exact
+            path="/create"
+            render={(rp) => (
+              <Edituser 
+              {...rp} 
+              label="create" 
+              user={emptyUser} 
+           
+              handleSubmit={handleUser} />
+            )}
+          />
     <Route
             exact
             path="/edit"
