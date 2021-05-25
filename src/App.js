@@ -8,6 +8,7 @@ import Shop from './pages/shop'
 import Nav from './components/nav'
 import React from 'react';
 import Edituser from './pages/edituser'
+;
 
 
 function App() {
@@ -196,6 +197,7 @@ const [cart, setCart] = React.useState([])
 
   return (
     <div className="App">
+      
       <Nav />
       <Switch>
         <Route exact path="/" render={(rp) =>
@@ -233,11 +235,10 @@ const [cart, setCart] = React.useState([])
 
           />} />
 
-<Route exact path="/user" render={(rp) => 
+          <Route exact path="/user" render={(rp) => 
           <User  {...rp} users={users}    selectedEdit={selectedEdit}    deleteUser={deleteUser}   />
-
-} />
-    <Route
+           } />
+          <Route
             exact
             path="/edit"
             render={(rp) => (
