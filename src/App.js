@@ -46,6 +46,12 @@ const [cart, setCart] = React.useState([])
   //  handleRatingUpdate(rating, id)
   }
 
+  const removeFromCart = (pos) => {
+    console.log("pos",pos)
+    const updatedCart = cart.filter((flavor, index) => index !== pos)
+    setCart(updatedCart)
+  }
+
   // function that will get all the flavors
   const getCreems = () => {
     fetch(url + "/creem/")
@@ -55,14 +61,7 @@ const [cart, setCart] = React.useState([])
     })
   }
 
-  // function that will get all the flavors
-  // const getRatings = () => {
-  //   fetch(url + "/creem/rating")
-  //   .then((response) => response.json())
-  //   .then((data) => {
-  //     setRatings(data)
-  //   })
-  // }
+  
 
   // function to get all shops 
   const getShops = () => {
@@ -171,8 +170,10 @@ const [cart, setCart] = React.useState([])
         <Route path="/checkout" render={(rp) =>
           <Checkout 
           {...rp}
+          cart={cart}
           creem={creems}
           selectedCreem={selectedCreem}
+          removeFromCart={removeFromCart}
           handleSubmit={handleUpdate}
           deleteCreem={deleteCreem}
           selectCreem={selectCreem}
