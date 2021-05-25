@@ -40,6 +40,10 @@ console.log(props.users)
   });
   return (
     <div>
+        <button id="edit" onClick={() => {
+           
+            props.history.push("/create")
+          }}>Add</button>
 
    {user} </div>
   )

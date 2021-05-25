@@ -1,7 +1,5 @@
 import React from "react";
 import {useEffect} from "react"
-import {useState} from "react"
-
 
 const Shop = (props) => {
   // let [shops, setShops] = useState([])
@@ -67,7 +65,10 @@ console.log(average);
   });
   return (
    
-   <div>{shop} </div>
+   <div>{shop} 
+
+
+   </div>
   )
 };
 

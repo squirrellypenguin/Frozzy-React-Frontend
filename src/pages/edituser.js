@@ -6,9 +6,10 @@ const Edituser = (props) => {
 
   //FUNCTIONS
   const handleSubmit = (event) => {
+      console.log("submit")
     event.preventDefault(); // Prevent Form from Refreshing
     props.handleSubmit(formData); // Submit to Parents desired function
-    props.history.push("/"); //Push back to display page
+    props.history.push("/user"); //Push back to display page
   };
 
   const handleChange = (event) => {
