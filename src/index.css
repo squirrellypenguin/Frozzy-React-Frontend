@@ -235,7 +235,6 @@ background-color: var(--main-black);
 }
 
 
-/* ////////////////////////////////////// SHOPS PAGE STYLING ////////////////////////////////// */
 #shop-heading-container {
   width: 90%;
   margin: 0 auto;
@@ -305,4 +304,30 @@ background-color: var(--main-black);
   left: 10px;
   color: var(--main-white);
   font-size: .8em;
+
+}
+#edit {
+  border: none;
+  height: 40px;
+  border-radius: 20px;
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 35px;
+  background: var(--main-red);
+  color: var(--main-white);
+  font-family: 'Montserrat'; 
+}
+#delete {
+  border: 1px solid var(--main-red);
+  height: 40px;
+  border-radius: 20px;
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 35px;
+  background: black;
+  color: var(--main-red);
+  font-family: 'Montserrat'; 
+  margin-left: 10px;
 }

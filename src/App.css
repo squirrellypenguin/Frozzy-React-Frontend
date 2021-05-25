@@ -1,5 +1,11 @@
+
+body {
+  background-color: #242424;
+}
+
 .App {
   text-align: center;
+
 }
 
 .App-logo {
@@ -81,3 +87,51 @@ h1 { font-size: 1.5em; margin: 10px; }
 .rating > input:checked ~ label:hover,
 .rating > label:hover ~ input:checked ~ label, /* lighten current selection */
 .rating > input:checked ~ label:hover ~ label { color: #FFED85;  } 
+
+
+/* USer forms */
+
+
+.container {
+  display: grid;
+
+}
+
+.form {
+  list-style: none;
+}
+
+.form-header {
+  color: #EE4540;
+  text-shadow: rgb(237, 237, 237, .35) 0px 0px .5px,   rgb(237, 237, 237, .35) 0px 0px .5px,   rgb(237, 237, 237, .35) 0px 0px .5px,
+             rgb(237, 237, 237, .35) 0px 0px .5px,   rgb(237, 237, 237, .35) 0px 0px .5px,   rgb(237, 237, 237, .35) 0px 0px .5px;
+}
+
+.form li {
+  padding-bottom: 10px;
+  
+}
+
+.form li input {
+  border: none;
+  border-bottom: 2px solid #EE4540;
+  
+  color: #ededed;
+  background: -webkit-linear-gradient(360deg, #1d1d1d -50%, #494949 175%);
+  background: -moz-linear-gradient(360deg, #1d1d1d -50%, #494949 175%);
+  background: linear-gradient(360deg, #1d1d1d -50%, #494949 175%);
+}
+
+.small-container {
+  font-family: 'Montserrat'; 
+  color: #ededed;
+}
+/* Becasue the internet sucks so we we will all the do the same thing just a bit different  */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
