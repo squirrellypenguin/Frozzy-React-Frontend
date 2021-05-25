@@ -54,12 +54,20 @@ let creems = props.creems
           <div id='ic-stars'>
           <h3 id='ic-description-heading'>Users Score: {Math.floor(average)}</h3>
           <h3 id='ic-description-heading'>Submit your score</h3>
-            <img onClick={() => props.selectRating(1, creem._id)} src='https://res.cloudinary.com/dhad6e9gj/image/upload/v1621617727/Frozzy%20Project/Star_Icon-01-01_mzyxnw.png'/>
+          <fieldset class="rating">
+    <input type="radio" id="star5" name="rating" value="5" onClick={() => props.selectRating(5, creem._id)}  /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+    <input type="radio" id="star4" name="rating" value="4"  onClick={() => props.selectRating(4, creem._id)} /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+    <input type="radio" id="star3" name="rating" value="3"  onClick={() => props.selectRating(3, creem._id)} /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+    <input type="radio" id="star2" name="rating" value="2"  onClick={() => props.selectRating(2, creem._id)} /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+    <input type="radio" id="star1" name="rating" value="1"  onClick={() => props.selectRating(1, creem._id)} /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+   
+</fieldset>
+            {/* <img onClick={() => props.selectRating(1, creem._id)} src='https://res.cloudinary.com/dhad6e9gj/image/upload/v1621617727/Frozzy%20Project/Star_Icon-01-01_mzyxnw.png'/>
             <img onClick={() => props.selectRating(2, creem._id)}  src='https://res.cloudinary.com/dhad6e9gj/image/upload/v1621617727/Frozzy%20Project/Star_Icon-01-01_mzyxnw.png'/>
             <img  onClick={() => props.selectRating(3, creem._id)}  src='https://res.cloudinary.com/dhad6e9gj/image/upload/v1621617727/Frozzy%20Project/Star_Icon-01-01_mzyxnw.png'/>
             <img  onClick={() => props.selectRating(4, creem._id)} src='https://res.cloudinary.com/dhad6e9gj/image/upload/v1621617727/Frozzy%20Project/Star_Icon-01-01_mzyxnw.png'/>
             <img  onClick={() => props.selectRating(5, creem._id)} src='https://res.cloudinary.com/dhad6e9gj/image/upload/v1621617727/Frozzy%20Project/Star_Icon-01-01_mzyxnw.png'/>
-           
+            */}
             <div>
               <h1 id='ic-price'>${creem.cost}</h1>
             </div>
