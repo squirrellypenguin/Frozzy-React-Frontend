@@ -4,23 +4,23 @@ import {useState} from "react"
 
 
 const Creem = (props) => {
-  let [creems, setCreems] = useState([])
-  // console.log(props)
-  let url = "https://frozzybe.herokuapp.com/creem/"
-  const getCreems = async (url) => {
-    const response = await fetch(url);
-    const data = await response.json();
-    // setHeroes(data.data);
-    setCreems(data)
-  };
-  useEffect(() => {
-    getCreems(url);
-  }, []);
+  // let [creems, setCreems] = useState([])
+  // // console.log(props)
+  // let url = "https://frozzybe.herokuapp.com/creem/"
+  // const getCreems = async (url) => {
+  //   const response = await fetch(url);
+  //   const data = await response.json();
+  //   setCreems(data)
+  // };
+  // useEffect(() => {
+  //   getCreems(url);
+  // }, []);
 
-
+let creems = props.creems
 
 
   let creem = creems.map((creem, index) => {
+
     //  console.log(creem.name);
     //  var average = shop.rating.reduce(function (average, value, _, array){
     //  console.log(average, value,)
@@ -52,11 +52,14 @@ const Creem = (props) => {
         </article>
         <div id='ic-stars-container'>
           <div id='ic-stars'>
+          <h3 id='ic-description-heading'>Users Score: {Math.floor(average)}</h3>
+          <h3 id='ic-description-heading'>Submit your score</h3>
             <img onClick={() => props.selectRating(1, creem._id)} src='https://res.cloudinary.com/dhad6e9gj/image/upload/v1621617727/Frozzy%20Project/Star_Icon-01-01_mzyxnw.png'/>
             <img onClick={() => props.selectRating(2, creem._id)}  src='https://res.cloudinary.com/dhad6e9gj/image/upload/v1621617727/Frozzy%20Project/Star_Icon-01-01_mzyxnw.png'/>
             <img  onClick={() => props.selectRating(3, creem._id)}  src='https://res.cloudinary.com/dhad6e9gj/image/upload/v1621617727/Frozzy%20Project/Star_Icon-01-01_mzyxnw.png'/>
             <img  onClick={() => props.selectRating(4, creem._id)} src='https://res.cloudinary.com/dhad6e9gj/image/upload/v1621617727/Frozzy%20Project/Star_Icon-01-01_mzyxnw.png'/>
             <img  onClick={() => props.selectRating(5, creem._id)} src='https://res.cloudinary.com/dhad6e9gj/image/upload/v1621617727/Frozzy%20Project/Star_Icon-01-01_mzyxnw.png'/>
+           
             <div>
               <h1 id='ic-price'>${creem.cost}</h1>
             </div>

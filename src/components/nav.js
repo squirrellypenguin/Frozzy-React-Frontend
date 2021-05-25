@@ -16,6 +16,9 @@ const Nav = (props) => {
             <Link to="/icecream">
                 <div>Ice Cream</div>
             </Link>
+            <Link to="/user">
+                <div>User</div>
+            </Link>
         </div>
     )
 }

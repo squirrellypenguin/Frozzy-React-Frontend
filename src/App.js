@@ -3,7 +3,7 @@ import './App.css';
 import Checkout from './pages/checkout'
 import Main from './pages/main'
 import Creem from './pages/icecream'
-
+import User from './pages/user'
 import Shop from './pages/shop'
 import Nav from './components/nav'
 import React from 'react';
@@ -191,9 +191,13 @@ const [cart, setCart] = React.useState([])
           // selectRating={selectRating}
 
           />} />
+
+<Route exact path="/user" render={(rp) => 
+          <User           />
+} />
       </Switch>
     </div>
-  );
+  )
 }
 
 export default App;

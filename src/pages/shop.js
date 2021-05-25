@@ -4,18 +4,18 @@ import {useState} from "react"
 
 
 const Shop = (props) => {
-  let [shops, setShops] = useState([])
-  let url = "https://frozzybe.herokuapp.com/store/"
-  const getShops = async (url) => {
-    const response = await fetch(url);
-    const data = await response.json();
-    // setHeroes(data.data);
-    setShops(data)
-  };
-  useEffect(() => {
-    getShops(url);
-  }, []);
-
+  // let [shops, setShops] = useState([])
+  // let url = "https://frozzybe.herokuapp.com/store/"
+  // const getShops = async (url) => {
+  //   const response = await fetch(url);
+  //   const data = await response.json();
+  //   // setHeroes(data.data);
+  //   setShops(data)
+  // };
+  // useEffect(() => {
+  //   getShops(url);
+  // }, []);
+  let shops =props.shops
 
 
   let shop = shops.map((shop, index) => {
