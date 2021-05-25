@@ -37,14 +37,31 @@ console.log(average);
 
     return (
       <div  key={index}>
-        {/* <img src={hero.images.sm} alt="small-profile-picture" /> */}
-        <div className="small-container">
+        
+        {/* <div className="small-container">
           <img src={shop.img} />
           <h2>{shop.name}</h2>
           <h2>{shop.location}</h2>
           <h2>{shop.description}</h2>
           <h2>Rating: {average}</h2>
+        </div> */}
+
+        <div id='shop-heading-container'>
         </div>
+        <div id='shop-image-container'>
+        <div id='shop-image'>
+          <img src={shop.img}/>
+        </div>
+        </div>
+        <div id='shop-name'>
+          <h3>{shop.name}</h3>
+        </div>
+        <div id='shop-rating-container'>
+          <img id='shop-rating' src='https://res.cloudinary.com/dhad6e9gj/image/upload/v1621617727/Frozzy%20Project/Star_RED_Icon-01-01_xqqell.png'/>
+          <span>Rating: {average}</span>
+          <span>{shop.location}</span>
+        </div>
+        
       </div>
     );
   });

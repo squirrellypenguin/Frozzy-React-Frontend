@@ -20,7 +20,7 @@ const Main = (props) => {
       <div id='main-login-button-container'>
       
       <Link to='/shop'>
-        <button id='main-login-button'>Check out some ice cream!</button>
+        <button id='main-login-button'>Check out ice cream shops!</button>
       </Link>
       </div>
     </div>

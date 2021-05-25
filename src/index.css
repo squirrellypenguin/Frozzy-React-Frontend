@@ -7,6 +7,7 @@
   --main-red: #EE4540;
 }
 body {
+  background-color: var(--main-black);
   margin: 0; /* <-- Codys code */
   font-family: 'Montserrat'; /* <-- Codys code */
   /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -31,7 +32,7 @@ body {
 #black-background {
   /* border: 2px solid hotpink; */
   background: var(--main-black);
-  height: 1000px;
+  /* height: 1000px; */
 }
 /* ----------- can delete BLACK-BACKGROUND when moved into JSX -------------- */
 
@@ -79,8 +80,9 @@ body {
   position:relative;
   bottom: 200px;
 }
+
 #main-login-button {
-  /* border: 2px solid red; */
+  /* border: 2px solid hotpink; */
   /* display: flex; */
   /* justify-content: center; */
   border: none;
@@ -89,7 +91,9 @@ body {
   background: var(--main-red);
   color: var(--main-white);
   font-family: 'Montserrat'; 
+  padding: 0 20px;
 }
+
 #main-login-button:hover {
   background: var(--main-black);
   border: 1px solid var(--main-grey)
@@ -230,3 +234,75 @@ background-color: var(--main-black);
  background: var(--main-black);
 }
 
+
+/* ////////////////////////////////////// SHOPS PAGE STYLING ////////////////////////////////// */
+#shop-heading-container {
+  width: 90%;
+  margin: 0 auto;
+}
+#shop-heading {
+  /* border: 2px solid red; */
+  /* color: white; */
+}
+
+#shop-image-container {
+  /* border: 2px solid red; */
+  border-radius: 10px;
+  width: 90%;
+  height: 20em;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+#shop-image {
+  transform: scale(.8);
+  /* object-fit: contain; */
+  /* display: block; */
+  /* object-position:10px center; */
+  /* background-image: cover; */
+  position: relative;
+  bottom: 300px;
+  right: 300px;
+}
+
+#shop-name h3 {
+  /* border: 2px solid hotpink; */
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 5px;
+  color: var(--main-white);
+  text-align: left;
+}
+#shop-rating-container {
+  /* border: 2px solid red; */
+  width: 90%;
+  margin: 0 auto;
+  text-align: left;
+  padding-top: 5px;
+  margin-bottom: 40px ;
+}
+
+#shop-rating {
+  /* border: 2px solid red; */
+  transform: scale(.7);
+  position: relative;
+  bottom: 7px;
+  left: -8px;
+}
+
+#shop-rating-container span:nth-of-type(1) {
+  /* border: 2px solid red; */
+  position: relative;
+  bottom: 20px;
+  left: -15px;
+  color: var(--main-white);
+}
+
+#shop-rating-container span:nth-of-type(2) {
+  /* border: 2px solid red; */
+  position: relative;
+  bottom: 20px;
+  left: 10px;
+  color: var(--main-white);
+  font-size: .8em;
+}
