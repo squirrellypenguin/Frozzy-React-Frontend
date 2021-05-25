@@ -32,7 +32,7 @@ body {
 #black-background {
   /* border: 2px solid hotpink; */
   background: var(--main-black);
-  height: 1000px;
+  /* height: 1000px; */
 }
 /* ----------- can delete BLACK-BACKGROUND when moved into JSX -------------- */
 
