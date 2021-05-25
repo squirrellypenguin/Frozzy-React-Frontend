@@ -318,6 +318,11 @@ background-color: var(--main-black);
   color: var(--main-white);
   font-family: 'Montserrat'; 
 }
+#edit:hover {
+  background: var(--main-black);
+  border: 1px solid var(--main-grey)
+}
+
 #delete {
   border: 1px solid var(--main-red);
   height: 40px;
@@ -330,4 +335,9 @@ background-color: var(--main-black);
   color: var(--main-red);
   font-family: 'Montserrat'; 
   margin-left: 10px;
+}
+#delete:hover {
+  color:#ededed;
+  background: var(--main-red);
+  border: 1px solid var(--main-black)
 }

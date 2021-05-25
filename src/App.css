@@ -8,43 +8,6 @@ body {
 
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-/* // Sample code suplpied from  */
-/* // https://codepen.io/jamesbarnett/pen/vlpkh */
-
 @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 
 fieldset, label { margin: 0; padding: 0; }
@@ -89,7 +52,7 @@ h1 { font-size: 1.5em; margin: 10px; }
 .rating > input:checked ~ label:hover ~ label { color: #FFED85;  } 
 
 
-/* USer forms */
+/* User forms */
 
 
 .container {
@@ -115,7 +78,11 @@ h1 { font-size: 1.5em; margin: 10px; }
 .form li input {
   border: none;
   border-bottom: 2px solid #EE4540;
-  
+  border-radius: 18px;
+    background: #600;
+    padding: 20px; 
+    width: 200px;
+    height: 15px;  
   color: #ededed;
   background: -webkit-linear-gradient(360deg, #1d1d1d -50%, #494949 175%);
   background: -moz-linear-gradient(360deg, #1d1d1d -50%, #494949 175%);
@@ -134,4 +101,62 @@ input::-webkit-inner-spin-button {
 }
 input[type=number] {
   -moz-appearance: textfield;
+}
+
+
+.userGrid {
+
+display: grid;
+grid-template-columns: 1fr;
+gap: 5px 5px;
+}
+
+@media only screen and (min-width: 768px) {
+.userGrid {
+  align-items: end;
+ 
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px 10px;
+  
+  }
+
+}
+.small-container {
+  padding-top: 15px;
+
+}
+
+div.card {
+ display: flex;
+ flex-direction: column;
+justify-content: flex-start;
+  border-radius:  60px;
+ height: 325px;
+}
+.profile-picture {
+  border-radius: 200px;
+}     
+
+.outer {
+  width: 300px;
+  height: 350px;
+  margin: 10%;
+  border: 5px solid rgba(0, 0, 0, .2);
+  border-radius: 5px;
+}
+
+.inner {
+  width: 270px;
+  height: 270px;
+  margin: auto;
+  margin-top: 3%;
+  text-align: center;
+  background:    rgb(237, 237, 237, .35);
+  border-radius: 5px;
+  padding: 5px;
+}
+.small {
+  padding: -10px;
 }

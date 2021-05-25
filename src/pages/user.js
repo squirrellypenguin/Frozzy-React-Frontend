@@ -12,18 +12,23 @@ const User = (props) => {
 console.log(props.users)
   let user = props.users.map((user, index) => {
      console.log(user.lastname);
-     
+     let red = {
+       color: '#EE4540'
+     }
     return (
-      <div  key={index}>
-        {/* <img src={hero.images.sm} alt="small-profile-picture" /> */}
-        <div className="small-container">
-        <h2>{user.user}</h2>
+    
+       
+        <div className="small-container" key={index}>
+        <img src={user.img} className="profile-picture" alt="Profile Picture" />
+        <div className="card inner outer">
+        <h2 className="small" style={red} >User: {user.user}</h2>
         <h2>{user.first} {user.last}</h2>
         
-          <h3>Telephone: {user.phone}</h3>
-          <h3>Email: {user.email}</h3>
-          <h3>{user.address} {user.city}</h3>
-          <h3>{user.state} {user.zip}</h3>
+          <p>Telephone: {user.phone}</p>
+          <p>Email: {user.email}</p>
+          <p>{user.address} {user.city}</p>
+          <p>{user.state} {user.zip}</p>
+          <div className="button-grid">
           <button id="edit" onClick={() => {
             props.selectedEdit(user)
             props.history.push("/edit")
@@ -34,8 +39,13 @@ console.log(props.users)
           }}>
             Delete
           </button>
+          </div>
+          </div>
+          <br />
+          <br />
         </div>
-      </div>
+    
+     
     );
   });
   return (
@@ -43,9 +53,11 @@ console.log(props.users)
         <button id="edit" onClick={() => {
            
             props.history.push("/create")
-          }}>Add</button>
-
-   {user} </div>
+          }}>Add</button> <br /><br />
+    <div className="userGrid">
+   {user} 
+   </div>
+   </div>
   )
 };
 
