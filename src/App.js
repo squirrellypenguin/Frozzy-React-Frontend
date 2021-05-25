@@ -7,6 +7,7 @@ import User from './pages/user'
 import Shop from './pages/shop'
 import Nav from './components/nav'
 import React from 'react';
+import Edituser from './pages/edituser'
 
 
 function App() {
@@ -16,7 +17,31 @@ function App() {
   const [shops, setShops] = React.useState([])
   // State to hold ice cream flavors 
   const [creems, setCreems] = React.useState([])
+  const [edit, setEdit] = React.useState()
 
+  const selectedEdit = (user) => {
+    setEdit(user)
+  }
+  
+
+  let [users, setUsers] = React.useState([])
+  const getUsers = async () => {
+    const response = await fetch(url + "/user");
+    console.log(response)
+    const data = await response.json();
+   console.log("read for this", data)
+    setUsers(data)
+  };
+
+
+  const deleteUser = (user) => {
+    fetch(url + "/user/" + user._id, {
+      method: "delete"
+    })
+    .then(() => {
+      getUsers()
+    })
+  }
   //state to hold ratings
   const [ratings, setRatings] = React.useState([])
 
@@ -34,6 +59,10 @@ function App() {
   const emptyRating = {
     rating: 0
   }
+
+
+
+
   // state that represents selected flavor 
   const [selectedCreem, setSelectedCreem] = React.useState(emptyCreem)
 const [cart, setCart] = React.useState([])
@@ -85,6 +114,7 @@ const [cart, setCart] = React.useState([])
   //useEffect to get shop data 
   React.useEffect(() =>{
     getShops()
+    getUsers();
   }, [])
 
   //useEffect to get the flavor data right away
@@ -114,6 +144,17 @@ const [cart, setCart] = React.useState([])
       body: JSON.stringify(creem)
     })
     .then(() => getCreems())
+  }
+
+  const handleEdit = (user) => {
+    fetch(url + "/user/" + user._id, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(user)
+    })
+    .then(() => getUsers())
   }
 
 
@@ -193,8 +234,21 @@ const [cart, setCart] = React.useState([])
           />} />
 
 <Route exact path="/user" render={(rp) => 
-          <User           />
+          <User  {...rp} users={users}    selectedEdit={selectedEdit}    deleteUser={deleteUser}   />
+
 } />
+    <Route
+            exact
+            path="/edit"
+            render={(rp) => (
+              <Edituser 
+              {...rp} 
+              label="update" 
+              user={edit} 
+           
+              handleSubmit={handleEdit} />
+            )}
+          />
       </Switch>
     </div>
   )
