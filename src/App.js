@@ -81,13 +81,14 @@ const [cart, setCart] = React.useState([])
 
   const selectFavorite = (order) => {
     setTimeout(setFavorite([...favorite, order]), 2000)
+    let body = { faves: order.name}
     console.log("WHAT DATS IS GETTING SENT???", order.name)
-    fetch(url + "/user/faves/60ad54cf6630ed001517a19a", {
+    fetch(url + "https://frozzybe.herokuapp.com/user/faves/60ad54cf6630ed001517a19a", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(order.name)
+      body: JSON.stringify(body)
     })
     .then(() => getUsers())
   }
