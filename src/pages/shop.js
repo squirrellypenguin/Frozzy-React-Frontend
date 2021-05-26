@@ -1,6 +1,6 @@
 import React from "react";
 import {useEffect} from "react"
-
+import Footer from (../components/Footer)
 const Shop = (props) => {
   
   // let [shops, setShops] = useState([])
