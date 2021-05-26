@@ -1,6 +1,8 @@
 import React from "react";
 import {useEffect} from "react"
 import Footer from '../components/Footer'
+import { Link } from 'react-router-dom';
+
 const Shop = (props) => {
   // let [shops, setShops] = useState([])
   // let url = "https://frozzybe.herokuapp.com/store/"
@@ -48,6 +50,10 @@ const Shop = (props) => {
             <span>Rating: {average}</span>
             <span>{shop.location}</span>
           </div>
+          <Link to='/icecream'>
+            <button id='see-ic-button'> See Ice Creams</button>
+          </Link>
+        
         </section>
       </div>
     );
