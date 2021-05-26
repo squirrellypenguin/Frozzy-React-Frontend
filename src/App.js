@@ -80,7 +80,7 @@ const [cart, setCart] = React.useState([])
 
 
   const selectFavorite = (order) => {
-    setTimeout(setFavorite([...favorite, creem]), 2000)
+    setTimeout(setFavorite([...favorite, order]), 2000)
     console.log("WHAT DATS IS GETTING SENT???", order.name)
     fetch(url + "/user/faves/60ad54cf6630ed001517a19a", {
       method: "PUT",
