@@ -77,16 +77,12 @@ const [cart, setCart] = React.useState([])
   const [favorite, setFavorite] = React.useState([])
 
 
-const foobar = (creem, index) =>{
-  console.log("1 sec") 
-  setTimeout(setFavorite([...favorite, creem]), 2000)
-    console.log("2 set")
-    console.log(creem)
-  }
+
 
   const selectFavorite = (order) => {
+    setTimeout(setFavorite([...favorite, creem]), 2000)
     console.log("WHAT DATS IS GETTING SENT???", order.name)
-    fetch(url + "/user/faves/" + "60ad54cf6630ed001517a19a", {
+    fetch(url + "/user/faves/60ad54cf6630ed001517a19a", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"
