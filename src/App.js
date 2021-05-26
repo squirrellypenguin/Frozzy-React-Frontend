@@ -127,7 +127,7 @@ const [cart, setCart] = React.useState([])
     })
   }
 
-  // function to get ratings
+  // //function to get ratings
   const getRating = () => {
     fetch(url + "/creem" + "/rating")
     .then((response) => response.json())
