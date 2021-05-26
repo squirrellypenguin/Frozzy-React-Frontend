@@ -77,9 +77,22 @@ const [cart, setCart] = React.useState([])
   const [favorite, setFavorite] = React.useState([])
 
 
-const selectFavorite = (creem, index) =>{
-    setFavorite([...favorite, creem])
+
+
+  const selectFavorite = (order) => {
+    setTimeout(setFavorite([...favorite, order]), 2000)
+    let body = { faves: order.name}
+    console.log("WHAT DATS IS GETTING SENT???", order.name)
+    fetch("https://frozzybe.herokuapp.com/user/faves/60ad54cf6630ed001517a19a", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(body)
+    })
+    .then(() => getUsers())
   }
+
 
 
   const selectCart = (creem, index) => {
@@ -114,7 +127,7 @@ const selectFavorite = (creem, index) =>{
     })
   }
 
-  // function to get ratings
+  // //function to get ratings
   const getRating = () => {
     fetch(url + "/creem" + "/rating")
     .then((response) => response.json())
@@ -260,7 +273,7 @@ const selectFavorite = (creem, index) =>{
           />} />
 
 <Route exact path="/user" render={(rp) => 
-          <User  {...rp} users={users}    selectedEdit={selectedEdit}    deleteUser={deleteUser}   />
+          <User  {...rp} users={users}    orders={favorite} selectedEdit={selectedEdit}    deleteUser={deleteUser}   />
 
 } />
     <Route
