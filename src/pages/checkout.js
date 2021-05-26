@@ -6,7 +6,7 @@ const Checkout = (props) => {
 
     const [totalCost, setTotalCost] = useState([null])
 
-    const { cart, removeFromCart } = props
+    const { cart, removeFromCart, favorite } = props
     const reducer = (accumulator, currentValue) => accumulator + currentValue;
     let cost
     let value1 = 0
@@ -23,6 +23,19 @@ const Checkout = (props) => {
     // console.log(value.reduce(reducer))
 
 const loaded = () => (
+<div>
+    <div style={{textAlign: "center"}}>
+        {favorite.map((flavor, index) => (
+            <article key={flavor.id}>
+                <h1>{flavor.name}</h1>
+                <img src={flavor.img}/>
+                <h3>{flavor.cost}</h3> 
+                <button onClick={() =>{
+                    removeFromCart(index)
+                }}>Remove</button>   
+            </article>
+        ))}
+    </div>
 
     <div style={{textAlign: "center"}}>
         {cart.map((flavor, index) => (
@@ -37,11 +50,14 @@ const loaded = () => (
         ))}
   <h3> TOTAL COST: ETH {value.reduce(reducer)}</h3>
     </div>
+
+</div>
 )
+
 
 const loading = () => <h1>Add your favorite flavors</h1>
 
-return cart.length > 0 ? loaded() : loading()
+return cart.length || favorite.length > 0 ? loaded() : loading()
 
 
 }

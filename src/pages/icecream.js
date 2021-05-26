@@ -101,6 +101,9 @@ let creems = props.creems
             </div>
           </section>
           <button id="edit" onClick={() => props.selectCart(creem, index)} >Add to Cart</button>
+          <button onClick={() => props.selectFavorite(creem, index)}>
+            <img src='https://res.cloudinary.com/dhad6e9gj/image/upload/v1621617894/Frozzy%20Project/Favorite_Icon-01-01_wqwwih.png'/>
+          </button>
         </div>
       </div>
         </div>

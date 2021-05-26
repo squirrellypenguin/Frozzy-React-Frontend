@@ -73,6 +73,14 @@ function App() {
 const [cart, setCart] = React.useState([])
   // state for rating 
   const [selectedRating, setselectedRating] = React.useState(emptyRating)
+  
+  const [favorite, setFavorite] = React.useState([])
+
+
+const selectFavorite = (creem, index) =>{
+    setFavorite([...favorite, creem])
+  }
+
 
   const selectCart = (creem, index) => {
     console.log("lifted State", creem)
@@ -227,6 +235,7 @@ const [cart, setCart] = React.useState([])
         <Route path="/checkout" render={(rp) =>
           <Checkout 
           {...rp}
+          favorite={favorite}
           cart={cart}
           creem={creems}
           selectedCreem={selectedCreem}
@@ -239,6 +248,7 @@ const [cart, setCart] = React.useState([])
          <Route exact path="/icecream" render={(rp) => 
           <Creem
           {...rp}
+          selectFavorite={selectFavorite}
           handleRatingSubmit={handleRatingUpdate}
           selectRating={selectRating}
           selectCart={selectCart}
