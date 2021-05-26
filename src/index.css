@@ -213,10 +213,6 @@ background-color: var(--main-black);
   text-align: left;
 }
 
-#ic-customize-dropdown-container {
-  /* border: 2px solid red;  */
-}
-
  .ic-customize-dropdown {
    /* border: 2px solid red; */
    display: block;
@@ -235,9 +231,11 @@ background-color: var(--main-black);
 }
 
 
+
 #shop-heading-container {
-  width: 90%;
-  margin: 0 auto;
+  /* border: 2px solid red; */
+  /* width: 90%; */
+  /* margin: 0 auto; */
 }
 #shop-heading {
   /* border: 2px solid red; */
@@ -304,8 +302,89 @@ background-color: var(--main-black);
   left: 10px;
   color: var(--main-white);
   font-size: .8em;
-
 }
+
+
+
+/* ////////////////////////////////////// FOOTER PAGE STYLING ////////////////////////////////// */
+nav {
+  /* border: 2px solid red; */
+  position: relative;
+  top: 575px;
+  z-index: 1;
+  background-color: var(--main-black);
+}
+
+
+#footer-container {
+  /* border: 1px solid red; */
+  height: 80px;
+  width: 90%;
+  /* margin: 0 auto; */
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  background-color: var(--main-black);
+  margin-top:45px;
+}
+
+.footer-buttons {
+  /* border: 2px solid hotpink; */
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px;
+}
+
+
+.footer-icon {
+  border: none;
+  /* border: 2px solid red; */
+  margin: 0 auto; 
+  background: none;
+  transform: scale(.8)
+}
+
+.footer-copy {
+  /* border: 2px solid red; */
+  color: var(--main-grey);
+  text-align: center;
+  margin: 0;
+  font-size: 1em;
+  position: relative;
+  bottom: 8px;
+}
+.footer-buttons p, p:hover, p:focus, p:active {
+  /* color: red; */
+  text-decoration: none;  
+}
+
+
+
+
+
+
+
+#footer-home-button-container {
+  /* border: 2px solid red; */
+  display: flex;
+  justify-content: center;
+  /* width: 40%; */
+  /* height: 40%; */
+  margin: 0 auto;
+  position: relative;
+  bottom: 30px;
+}
+#home-button {
+  border: none;
+  /* border: 2px solid hotpink; */
+  /* width: 50px; */
+  /* height: 50px; */
+  background: none;
+  transform: scale(2.7);
+}
+
 #edit {
   border: none;
   height: 40px;
@@ -341,3 +420,4 @@ background-color: var(--main-black);
   background: var(--main-red);
   border: 1px solid var(--main-black)
 }
+

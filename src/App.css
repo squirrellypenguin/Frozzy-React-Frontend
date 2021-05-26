@@ -160,3 +160,18 @@ justify-content: flex-start;
 .small {
   padding: -10px;
 }
+
+#fave {
+  border: none;
+  background-repeat: no-repeat;
+background-size: 100%;
+width: 32px;
+height: 35px;
+  background:url(https://res.cloudinary.com/dhad6e9gj/image/upload/v1621617894/Frozzy%20Project/Favorite_Icon-01-01_wqwwih.png);
+}
+#fave:focus {
+  background-color: red;
+  height: 200px;
+  background:url(https://i.ibb.co/NK8PpYh/star-xxl.png);
+}
+
