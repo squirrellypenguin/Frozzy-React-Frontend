@@ -1,8 +1,5 @@
 import React from "react";
 import {useEffect} from "react"
-import {useState} from "react"
-import Footer from '../components/Footer'
-
 
 const Shop = (props) => {
   
@@ -58,9 +55,11 @@ const Shop = (props) => {
   });
 
   return (
+
    <div id='shop-container'>
      <Footer/>   
      {shop} 
+
    </div>
   )
 };

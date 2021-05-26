@@ -60,8 +60,7 @@ let creems = props.creems
     <input type="radio" id="star3" name="rating" value="3"  onClick={() => props.selectRating(3, creem._id)} /><label class = "full" for="star3" title="Meh - 3 stars"></label>
     <input type="radio" id="star2" name="rating" value="2"  onClick={() => props.selectRating(2, creem._id)} /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
     <input type="radio" id="star1" name="rating" value="1"  onClick={() => props.selectRating(1, creem._id)} /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
-   
-</fieldset>
+    </fieldset>
             {/* <img onClick={() => props.selectRating(1, creem._id)} src='https://res.cloudinary.com/dhad6e9gj/image/upload/v1621617727/Frozzy%20Project/Star_Icon-01-01_mzyxnw.png'/>
             <img onClick={() => props.selectRating(2, creem._id)}  src='https://res.cloudinary.com/dhad6e9gj/image/upload/v1621617727/Frozzy%20Project/Star_Icon-01-01_mzyxnw.png'/>
             <img  onClick={() => props.selectRating(3, creem._id)}  src='https://res.cloudinary.com/dhad6e9gj/image/upload/v1621617727/Frozzy%20Project/Star_Icon-01-01_mzyxnw.png'/>
@@ -72,6 +71,9 @@ let creems = props.creems
               <h1 id='ic-price'>${creem.cost}</h1>
             </div>
           </div>
+
+          <br />
+          <br />
           <article id= 'ic-description-container'>
             <h3 id='ic-description-heading'>Description</h3>
             <p id='ic-description-copy'>{creem.description}</p>
@@ -98,7 +100,10 @@ let creems = props.creems
               </select>
             </div>
           </section>
-          <button onClick={() => props.selectCart(creem, index)} >Maybe</button>
+          <button id="edit" onClick={() => props.selectCart(creem, index)} >Add to Cart</button>
+          <button onClick={() => props.selectFavorite(creem, index)}>
+            <img src='https://res.cloudinary.com/dhad6e9gj/image/upload/v1621617894/Frozzy%20Project/Favorite_Icon-01-01_wqwwih.png'/>
+          </button>
         </div>
       </div>
         </div>

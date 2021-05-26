@@ -61,7 +61,12 @@ function App() {
     rating: 0
   }
 
-
+  const emptyUser = {
+    
+    last: "",
+    img:  ""
+    
+  }
 
 
   // state that represents selected flavor 
@@ -69,6 +74,27 @@ function App() {
 const [cart, setCart] = React.useState([])
   // state for rating 
   const [selectedRating, setselectedRating] = React.useState(emptyRating)
+  
+  const [favorite, setFavorite] = React.useState([])
+
+
+
+
+  const selectFavorite = (order) => {
+    setTimeout(setFavorite([...favorite, order]), 2000)
+    let body = { faves: order.name}
+    console.log("WHAT DATS IS GETTING SENT???", order.name)
+    fetch("https://frozzybe.herokuapp.com/user/faves/60ad54cf6630ed001517a19a", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(body)
+    })
+    .then(() => getUsers())
+  }
+
+
 
   const selectCart = (creem, index) => {
     console.log("lifted State", creem)
@@ -102,7 +128,7 @@ const [cart, setCart] = React.useState([])
     })
   }
 
-  // function to get ratings
+  // //function to get ratings
   const getRating = () => {
     fetch(url + "/creem" + "/rating")
     .then((response) => response.json())
@@ -134,7 +160,18 @@ const [cart, setCart] = React.useState([])
     })
     .then(() => getCreems())
   }
-
+  const handleUser = (newUser) => {
+    console.log("state lifted")
+    console.log(newUser)
+    fetch(url + "/user/", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json"
+      },
+      body: JSON.stringify(newUser)
+    })
+    .then(() => getUsers())
+  }
   // handleUpdate function for when edit form is sumbitted 
   const handleUpdate = (creem) => {
     fetch(url + "/creem/" + creem, {
@@ -213,6 +250,7 @@ const [cart, setCart] = React.useState([])
         <Route path="/checkout" render={(rp) =>
           <Checkout 
           {...rp}
+          favorite={favorite}
           cart={cart}
           creem={creems}
           selectedCreem={selectedCreem}
@@ -225,6 +263,7 @@ const [cart, setCart] = React.useState([])
          <Route exact path="/icecream" render={(rp) => 
           <Creem
           {...rp}
+          selectFavorite={selectFavorite}
           handleRatingSubmit={handleRatingUpdate}
           selectRating={selectRating}
           selectCart={selectCart}
@@ -235,10 +274,25 @@ const [cart, setCart] = React.useState([])
 
           />} />
 
-          <Route exact path="/user" render={(rp) => 
-          <User  {...rp} users={users}    selectedEdit={selectedEdit}    deleteUser={deleteUser}   />
-           } />
-          <Route
+
+<Route exact path="/user" render={(rp) => 
+          <User  {...rp} users={users}    orders={favorite} selectedEdit={selectedEdit}    deleteUser={deleteUser}   />
+
+} />
+    <Route
+
+            exact
+            path="/create"
+            render={(rp) => (
+              <Edituser 
+              {...rp} 
+              label="create" 
+              user={emptyUser} 
+           
+              handleSubmit={handleUser} />
+            )}
+          />
+    <Route
             exact
             path="/edit"
             render={(rp) => (

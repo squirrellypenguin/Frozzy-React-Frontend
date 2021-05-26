@@ -231,18 +231,6 @@ background-color: var(--main-black);
 }
 
 
-/* ////////////////////////////////////// SHOPS PAGE STYLING ////////////////////////////////// */
-/* this dosent work yet..  */
-/* #shop-container {
-  border: 2px solid red;
-  overflow: scroll;
-} */
-/* this dosent work yet..  */
-
-
-
-
-
 
 #shop-heading-container {
   /* border: 2px solid red; */
@@ -396,3 +384,40 @@ nav {
   background: none;
   transform: scale(2.7);
 }
+
+#edit {
+  border: none;
+  height: 40px;
+  border-radius: 20px;
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 35px;
+  background: var(--main-red);
+  color: var(--main-white);
+  font-family: 'Montserrat'; 
+}
+#edit:hover {
+  background: var(--main-black);
+  border: 1px solid var(--main-grey)
+}
+
+#delete {
+  border: 1px solid var(--main-red);
+  height: 40px;
+  border-radius: 20px;
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 35px;
+  background: black;
+  color: var(--main-red);
+  font-family: 'Montserrat'; 
+  margin-left: 10px;
+}
+#delete:hover {
+  color:#ededed;
+  background: var(--main-red);
+  border: 1px solid var(--main-black)
+}
+
