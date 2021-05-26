@@ -15,6 +15,16 @@ const Footer = () => {
                 </Link>
             </section>
 
+
+
+            <section id='footer-home-button-container'>
+                <Link>
+                    <button to='/' id='home-button'><img src='https://res.cloudinary.com/dhad6e9gj/image/upload/v1621617903/Frozzy%20Project/Home_Icon-01-01_hxgeqd.png'/></button>
+                </Link>
+            </section>
+
+
+
             <section class='footer-buttons'>
                 <Link>
                     <button to='/menu' class='footer-icon'><img src='https://res.cloudinary.com/dhad6e9gj/image/upload/v1621613021/Frozzy%20Project/Profile_Icon-01_a7n7yr.png'/></button>
@@ -22,12 +32,6 @@ const Footer = () => {
                 </Link>
             </section>
             </div>
-
-            <section id='footer-home-button-container'>
-                <Link>
-                    <button to='/' id='home-button'><img src='https://res.cloudinary.com/dhad6e9gj/image/upload/v1621617903/Frozzy%20Project/Home_Icon-01-01_hxgeqd.png'/></button>
-                </Link>
-            </section>
         </nav>
         </div>
         

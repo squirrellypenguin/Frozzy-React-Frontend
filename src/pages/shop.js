@@ -59,7 +59,7 @@ const Shop = (props) => {
 
   return (
    <div id='shop-container'>
-     {/* <Footer/>    */}
+     <Footer/>   
      {shop} 
    </div>
   )
