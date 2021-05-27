@@ -27,7 +27,7 @@ console.log(props.users)
           <div className="button-grid">
           <button id="edit" onClick={() => {
             props.selectedEdit(user)
-            props.history.push("/edit")
+            props.history.push("/main/edit")
           }}>Edit</button>
 
         <button id="delete"onClick={() => {
@@ -49,7 +49,7 @@ console.log(props.users)
       <Footer />
         <button id="edit" onClick={() => {
            
-            props.history.push("/create")
+            props.history.push("/main/create")
           }}>Add</button> <br /><br />
     <div className="userGrid">
    {user} 
