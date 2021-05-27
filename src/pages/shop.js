@@ -50,8 +50,8 @@ const Shop = (props) => {
             <span>Rating: {average}</span>
             <span>{shop.location}</span>
           </div>
-          <Link to='/icecream'>
-            <button id='see-ic-button'> See Ice Creams</button>
+          <Link to='/main/icecream'>
+            <button id='see-ic-button'> Order!</button>
           </Link>
         
         </section>

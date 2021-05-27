@@ -128,7 +128,7 @@ const loaded = () => (
 )
 
 
-const loading = () => <h1 style={{color: 'white'}}>ADD YOUR FAVORITE FLAVORS</h1>
+const loading = () => <h1 style={{color: 'white'}}>Go find the nearest <a href="./shop" style={{color: '#EE4540',textDecoration:'none'}}>SHOP</a></h1>
 
 return cart.length || favorite.length > 0 ? loaded() : loading()
 

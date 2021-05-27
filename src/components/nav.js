@@ -7,16 +7,16 @@ const Nav = (props) => {
             <Link style={{textDecoration: 'none'}}to="/">
                 <div>Main</div>
             </Link>
-            <Link style={{textDecoration: 'none'}}to="/shop">
+            <Link style={{textDecoration: 'none'}}to="/main/shop">
                 <div>Shops</div>
             </Link>
-            <Link style={{textDecoration: 'none'}}to="/checkout">
+            <Link style={{textDecoration: 'none'}}to="/main/checkout">
                 <div>Checkout</div>
             </Link>
-            <Link style={{textDecoration: 'none'}}to="/icecream">
+            <Link style={{textDecoration: 'none'}}to="/main/icecream">
                 <div>Ice Cream</div>
             </Link>
-            <Link style={{textDecoration: 'none'}}to="/user">
+            <Link style={{textDecoration: 'none'}}to="/main/user">
                 <div>User</div>
             </Link>
         </div>

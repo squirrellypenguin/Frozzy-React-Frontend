@@ -8,8 +8,8 @@ import Shop from './pages/shop'
 import Nav from './components/nav'
 import React from 'react';
 import Edituser from './pages/edituser'
-;
-
+import Landing from './pages/landing'
+import Footer from './components/Footer'
 
 function App() {
   const url = "https://frozzybe.herokuapp.com"
@@ -234,20 +234,20 @@ const [cart, setCart] = React.useState([])
 
   return (
     <div className="App">
-      
-      <Nav />
+         
+
       <Switch>
         <Route exact path="/" render={(rp) =>
-          <Main
+          <Landing
           {...rp}
-          shops={shops}
+          
            />} />
-        <Route exact path="/shop" render={(rp) => 
+        <Route exact path="/main/shop" render={(rp) => 
           <Shop
           {...rp}
           shops={shops} 
           />} />
-        <Route path="/checkout" render={(rp) =>
+        <Route path="/main/checkout" render={(rp) =>
           <Checkout 
           {...rp}
           favorite={favorite}
@@ -260,7 +260,7 @@ const [cart, setCart] = React.useState([])
           selectCreem={selectCreem}
           />} />
 
-         <Route exact path="/icecream" render={(rp) => 
+         <Route exact path="/main/icecream" render={(rp) => 
           <Creem
           {...rp}
           selectFavorite={selectFavorite}
@@ -275,7 +275,7 @@ const [cart, setCart] = React.useState([])
           />} />
 
 
-<Route exact path="/user" render={(rp) => 
+<Route exact path="/main/user" render={(rp) => 
           <User  {...rp} users={users}    orders={favorite} selectedEdit={selectedEdit}    deleteUser={deleteUser}   />
 
 } />
@@ -305,6 +305,7 @@ const [cart, setCart] = React.useState([])
             )}
           />
       </Switch>
+    
     </div>
   )
 }

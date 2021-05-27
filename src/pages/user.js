@@ -1,9 +1,5 @@
 import React from "react";
-import {useEffect} from "react"
-import {useState} from "react"
-import Edituser from './edituser'
-import { Switch,Route } from 'react-router-dom';
-
+import Footer from '../components/Footer'
 const User = (props) => {
 
 //   let shops =props.shops
@@ -50,6 +46,7 @@ console.log(props.users)
   });
   return (
     <div>
+      <Footer />
         <button id="edit" onClick={() => {
            
             props.history.push("/create")

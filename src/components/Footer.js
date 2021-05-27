@@ -9,7 +9,7 @@ const Footer = () => {
         <nav>
             <div id='footer-container'>
             <section class='footer-buttons'>
-                <Link to='/checkout'>
+                <Link to='/main/checkout'>
                     <button class='footer-icon'><img src='https://res.cloudinary.com/dhad6e9gj/image/upload/v1621613063/Frozzy%20Project/Shpping_Cart_RED_Icon-01_tfsykv.png'/></button>
                 </Link>
                     <p class='footer-copy'>Cart</p>
@@ -20,7 +20,7 @@ const Footer = () => {
                 </Link>
             </section>
             <section class='footer-buttons'>
-                <Link to='/user'>
+                <Link to='/main/user'>
                     <button class='footer-icon'><img src='https://res.cloudinary.com/dhad6e9gj/image/upload/v1621613021/Frozzy%20Project/Profile_RED_Icon-01_zitgel.png'/></button>
                 </Link>
                     <p class='footer-copy'>Profile</p>

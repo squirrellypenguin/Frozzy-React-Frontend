@@ -1,7 +1,7 @@
 import React from "react";
 import {useEffect} from "react"
 import {useState} from "react"
-
+import Footer from '../components/Footer'
 
 const Creem = (props) => {
   // let [creems, setCreems] = useState([])
@@ -44,7 +44,8 @@ let creems = props.creems
         <div id='ic-image-container'>
           <img src={creem.img} id='ic-photo'/>
           <div>
-            <img src="https://res.cloudinary.com/dhad6e9gj/image/upload/v1621617894/Frozzy%20Project/Favorite_Icon-01-01_wqwwih.png" className='fav-icon'/>
+          <button className='fav-icon' id="fave" onClick={() => props.selectFavorite(creem, index)}> </button>
+           
           </div>
         </div>
         <article id='ic-name'>
@@ -61,12 +62,7 @@ let creems = props.creems
     <input type="radio" id="star2" name="rating" value="2"  onClick={() => props.selectRating(2, creem._id)} /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
     <input type="radio" id="star1" name="rating" value="1"  onClick={() => props.selectRating(1, creem._id)} /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
     </fieldset>
-            {/* <img onClick={() => props.selectRating(1, creem._id)} src='https://res.cloudinary.com/dhad6e9gj/image/upload/v1621617727/Frozzy%20Project/Star_Icon-01-01_mzyxnw.png'/>
-            <img onClick={() => props.selectRating(2, creem._id)}  src='https://res.cloudinary.com/dhad6e9gj/image/upload/v1621617727/Frozzy%20Project/Star_Icon-01-01_mzyxnw.png'/>
-            <img  onClick={() => props.selectRating(3, creem._id)}  src='https://res.cloudinary.com/dhad6e9gj/image/upload/v1621617727/Frozzy%20Project/Star_Icon-01-01_mzyxnw.png'/>
-            <img  onClick={() => props.selectRating(4, creem._id)} src='https://res.cloudinary.com/dhad6e9gj/image/upload/v1621617727/Frozzy%20Project/Star_Icon-01-01_mzyxnw.png'/>
-            <img  onClick={() => props.selectRating(5, creem._id)} src='https://res.cloudinary.com/dhad6e9gj/image/upload/v1621617727/Frozzy%20Project/Star_Icon-01-01_mzyxnw.png'/>
-            */}
+         
             <div>
               <h1 id='ic-price'>${creem.cost}</h1>
             </div>
@@ -101,9 +97,7 @@ let creems = props.creems
             </div>
           </section>
           <button id="edit" onClick={() => props.selectCart(creem, index)} >Add to Cart</button>
-          <button id="fave" onClick={() => props.selectFavorite(creem, index)}>
           <div id="toggle"></div>
-          </button>
         </div>
       </div>
         </div>
@@ -122,7 +116,8 @@ let creems = props.creems
   });
   return (
    
-   <div>{creem} </div>
+   <div>    <Footer/>  {creem}    
+   </div>
   )
 };
 
