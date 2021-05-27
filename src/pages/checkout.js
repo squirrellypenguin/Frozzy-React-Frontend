@@ -4,13 +4,14 @@ import {useState} from "react"
 
 const Checkout = (props) => {
 
-    const [totalCost, setTotalCost] = useState([null])
+    const [totalCost, setTotalCost] = useState(0)
 
-    const { cart, removeFromCart, favorite } = props
+    const { cart, removeFromCart, favorite, } = props
+
     const reducer = (accumulator, currentValue) => accumulator + currentValue;
     let cost
     let value1 = 0
-    let value = [] 
+    let value = [0] 
     
     if (cart !== [])
     {for (cost in cart) {
@@ -20,42 +21,114 @@ const Checkout = (props) => {
     }
     
 }
-    // console.log(value.reduce(reducer))
+
 
 const loaded = () => (
 <div>
-    <div style={{textAlign: "center"}}>
-        {favorite.map((flavor, index) => (
-            <article key={flavor.id}>
-                <h1>{flavor.name}</h1>
-                <img src={flavor.img}/>
-                <h3>{flavor.cost}</h3> 
-                <button onClick={() =>{
-                    removeFromCart(index)
-                }}>Remove</button>   
-            </article>
-        ))}
-    </div>
+    
+<div style={{textAlign: "center"}}>
+        <h1 id="c-cart-heading">My Past Faves!</h1>
+        {cart.map((fave, index) => {
 
-    <div style={{textAlign: "center"}}>
-        {cart.map((flavor, index) => (
-            <article key={flavor.id}>
-                <h1>{flavor.name}</h1>
-                <img src={flavor.img}/>
-                <h3>{flavor.cost}</h3> 
-                <button onClick={() =>{
+        let average = fave.rating.reduce(function (sum, value) {
+            // console.log(sum, value )
+            return sum + value;
+        }, 0) / fave.rating.length;
+         
+         return (
+            <>
+            <div id="cart-container">
+             <div id="cart-image-container">
+                 <div id="cart-image">
+                 <img src={fave.img}/>
+                 </div>
+             </div>
+            </div>
+         
+              <h3 id="cart-ic-name">{fave.name}</h3>
+              <div id="cart-star-container">
+                <img id="cart-star" src="https://res.cloudinary.com/dhad6e9gj/image/upload/v1621617727/Frozzy%20Project/Star_RED_Icon-01-01_xqqell.png"/>
+                <p id="cart-rating">{Math.floor(average)}</p>
+              </div>
+              <div id="cart-cost-container">
+                 <p id="cart-ic-cost-name">{fave.name}</p>
+                 <p id="cart-ic-cost">${fave.cost}</p>
+             </div>
+             <div id="cart-delete-button-container">
+                 {/* <button id='cart-delete-button' 
+                 onClick={() =>{
                     removeFromCart(index)
-                }}>Remove</button>   
-            </article>
-        ))}
-  <h3> TOTAL COST: ETH {value.reduce(reducer)}</h3>
-    </div>
+                }}>Remove</button> */}
+             </div>
+ 
+           
+         </>
+
+         )
+        
+})}
+           
+</div>
+
+    
+
+
+<div style={{textAlign: "center"}}>
+        <h1 id="c-cart-heading">My Order</h1>
+        {cart.map((flavor, index) => {
+
+        let average = flavor.rating.reduce(function (sum, value) {
+            // console.log(sum, value )
+            return sum + value;
+        }, 0) / flavor.rating.length;
+         
+         return (
+            <>
+            <div id="cart-container">
+             <div id="cart-image-container">
+                 <div id="cart-image">
+                 <img src={flavor.img}/>
+                 </div>
+             </div>
+            </div>
+         
+              <h3 id="cart-ic-name">{flavor.name}</h3>
+              <div id="cart-star-container">
+                <img id="cart-star" src="https://res.cloudinary.com/dhad6e9gj/image/upload/v1621617727/Frozzy%20Project/Star_RED_Icon-01-01_xqqell.png"/>
+                <p id="cart-rating">{Math.floor(average)}</p>
+              </div>
+              <div id="cart-cost-container">
+                 <p id="cart-ic-cost-name">{flavor.name}</p>
+                 <p id="cart-ic-cost">${flavor.cost}</p>
+             </div>
+             <div id="cart-delete-button-container">
+                 <button id='cart-delete-button' 
+                 onClick={() =>{
+                    removeFromCart(index)
+                }}>Remove</button>
+             </div>
+ 
+           
+         </>
+
+         )
+        
+})}
+            <div id="cart-checkout-button-container">
+                 <button id='cart-checkout-button'>Checkout</button>
+             </div>
+
+            <div id="cart-total-container">
+                 <h3 id="cart-total-name">Total</h3>
+                 <h2 id="cart-total-price">${value.reduce(reducer)}</h2>
+             </div>
+</div>
 
 </div>
 )
 
 
-const loading = () => <h1>Add your favorite flavors</h1>
+const loading = () => <h1 style={{color: 'white'}}>ADD YOUR FAVORITE FLAVORS</h1>
 
 return cart.length || favorite.length > 0 ? loaded() : loading()
 
@@ -65,3 +138,8 @@ return cart.length || favorite.length > 0 ? loaded() : loading()
 export default Checkout
 
 
+
+
+
+
+    
