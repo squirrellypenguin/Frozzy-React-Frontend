@@ -216,7 +216,7 @@ nav {
   justify-content: space-between;
   position: fixed;
   background-color: var(--main-black);
-  margin-top:45px;
+  margin-top:125px;
 }
 
 .footer-buttons {
