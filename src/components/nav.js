@@ -4,19 +4,19 @@ import { Link } from 'react-router-dom';
 const Nav = (props) => {
     return(
         <div>
-            <Link to="/">
+            <Link style={{textDecoration: 'none'}}to="/">
                 <div>Main</div>
             </Link>
-            <Link to="/shop">
+            <Link style={{textDecoration: 'none'}}to="/shop">
                 <div>Shops</div>
             </Link>
-            <Link to="/checkout">
+            <Link style={{textDecoration: 'none'}}to="/checkout">
                 <div>Checkout</div>
             </Link>
-            <Link to="/icecream">
+            <Link style={{textDecoration: 'none'}}to="/icecream">
                 <div>Ice Cream</div>
             </Link>
-            <Link to="/user">
+            <Link style={{textDecoration: 'none'}}to="/user">
                 <div>User</div>
             </Link>
         </div>
