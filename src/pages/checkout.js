@@ -133,7 +133,7 @@ return (
 
 <div>
 <Footer />
-<h1> Add some items!</h1>
+<h1 style={{color:'white'}}> Add some items first!</h1>
         </div>
 )}
 return cart.length || favorite.length > 0 ? loaded() : loading()

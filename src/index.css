@@ -323,7 +323,7 @@ background-color: var(--main-black);
 nav {
   /* border: 2px solid red; */
   position: relative;
-  top: 675px; 
+  top: 575px; 
   z-index: 1;
   background-color: var(--main-black);
 }
@@ -437,7 +437,7 @@ nav {
 
                   /* Checkout page */
 #c-cart-heading, #c-fave-heading {
-  margin: 70px 800px 10px 10px;
+  margin: 70px 10px 10px 10px;
   position: relative;
   color: var(--main-white);
   text-align: left;

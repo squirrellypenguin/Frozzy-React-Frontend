@@ -1,5 +1,5 @@
 import React from "react";
-
+import Footer from "../components/Footer"
 const Edituser = (props) => {
   //STATE FOR THE FORM
   const [formData, setFormData] =  React.useState(props.user) //props.user);
@@ -18,8 +18,8 @@ const Edituser = (props) => {
 
   return (
      <div  > 
-       <h1 className="form-header stroke-me"> Update Registration: </h1>
-    <div className="container">
+       <Footer />
+       <input id="main-login-button" type="submit" value={props.label} />    <div className="container">
     <form onSubmit={handleSubmit}>
 <ul className="form">
     <li><input
@@ -94,9 +94,7 @@ const Edituser = (props) => {
       /></li>
       </ul>
 
-      <a href="./main/user" id="delete2" type="button">
-         Back</a><span />&
-               <input id="main-login-button" type="submit" value={props.label} />
+            
     </form>
 
     </div>
