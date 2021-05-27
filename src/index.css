@@ -320,26 +320,10 @@ background-color: var(--main-black);
 
 
 /* ////////////////////////////////////// FOOTER PAGE STYLING ////////////////////////////////// */
-nav {
-  /* border: 2px solid red; */
-  position: relative;
-  top: 565px; 
-  z-index: 1;
-  background-color: var(--main-black);
-}
 
 
-#footer-container {
-  /* border: 1px solid red; */
-  height: 80px;
-  width: 90%;
-  /* margin: 0 auto; */
-  display: flex;
-  justify-content: space-between;
-  position: fixed;
-  background-color: var(--main-black);
-  margin-top:45px;
-}
+
+
 
 .footer-buttons {
   /* border: 2px solid hotpink; */
