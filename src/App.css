@@ -222,6 +222,21 @@ nav {
   margin-top:125px;
 }
 
+
+@media only screen and (min-width: 600px) {
+
+#footer-container {
+  /* border: 1px solid red; */
+  height: 80px;
+  width: 90%;
+  /* margin: 0 auto; */
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  background-color: var(--main-black);
+  margin-top:-550px;
+}
+}
 .footer-buttons {
   /* border: 2px solid hotpink; */
   width: 15%;
