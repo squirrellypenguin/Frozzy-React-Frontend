@@ -139,10 +139,15 @@ return (
         </div>
 )}
 
+const body = cart.length || favorite.length > 0 ? loaded() : loading()
+
 return (
+    <div>
     <Footer />
- 
-)
+{body}
+</div>
+
+    )
 
 
 }
