@@ -282,7 +282,7 @@ const [cart, setCart] = React.useState([])
     <Route
 
             exact
-            path="/create"
+            path="/main/create"
             render={(rp) => (
               <Edituser 
               {...rp} 
@@ -294,7 +294,7 @@ const [cart, setCart] = React.useState([])
           />
     <Route
             exact
-            path="/edit"
+            path="/main/edit"
             render={(rp) => (
               <Edituser 
               {...rp} 

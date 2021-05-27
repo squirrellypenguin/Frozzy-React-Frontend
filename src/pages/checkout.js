@@ -1,7 +1,8 @@
 // import { props } from 'bluebird'
 import React from 'react'
 import {useState} from "react"
-
+import { Link } from 'react-router-dom';
+import Footer from '../components/Footer'
 const Checkout = (props) => {
 
     const [totalCost, setTotalCost] = useState(0)
@@ -25,7 +26,6 @@ const Checkout = (props) => {
 
 const loaded = () => (
 <div>
-    
 <div style={{textAlign: "center"}}>
         <h1 id="c-cart-heading">My Past Faves!</h1>
         {cart.map((fave, index) => {
@@ -128,8 +128,13 @@ const loaded = () => (
 )
 
 
-const loading = () => <h1 style={{color: 'white'}}>Go find the nearest <a href="./shop" style={{color: '#EE4540',textDecoration:'none'}}>SHOP</a></h1>
+const loading = () => {
+return (
 
+<div>
+<Footer />
+        </div>
+)}
 return cart.length || favorite.length > 0 ? loaded() : loading()
 
 
