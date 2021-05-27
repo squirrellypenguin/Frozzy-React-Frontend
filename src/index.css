@@ -323,7 +323,7 @@ background-color: var(--main-black);
 nav {
   /* border: 2px solid red; */
   position: relative;
-  top: 575px; 
+  top: 565px; 
   z-index: 1;
   background-color: var(--main-black);
 }
@@ -338,7 +338,7 @@ nav {
   justify-content: space-between;
   position: fixed;
   background-color: var(--main-black);
-  margin-top:45px;
+  margin-top:110px;
 }
 
 .footer-buttons {

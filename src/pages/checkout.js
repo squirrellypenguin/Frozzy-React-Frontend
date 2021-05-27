@@ -59,6 +59,7 @@ const loaded = () => (
                  onClick={() =>{
                     removeFromCart(index)
                 }}>Remove</button> */}
+
              </div>
  
            
@@ -124,6 +125,7 @@ const loaded = () => (
              </div>
 </div>
 
+
 </div>
 )
 
@@ -136,7 +138,11 @@ return (
 <h1 style={{color:'white'}}> Add some items first!</h1>
         </div>
 )}
-return cart.length || favorite.length > 0 ? loaded() : loading()
+
+return (
+    <Footer />
+ 
+)
 
 
 }
