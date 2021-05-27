@@ -15,7 +15,7 @@ const Footer = () => {
                     <p class='footer-copy'>Cart</p>
             </section>
             <section id='footer-home-button-container'>
-                <Link to='/'>
+                <Link to='/main/shop'>
                         <button id='home-button'><img src='https://res.cloudinary.com/dhad6e9gj/image/upload/v1621617903/Frozzy%20Project/Home_Icon-01-01_hxgeqd.png'/></button>
                 </Link>
             </section>
