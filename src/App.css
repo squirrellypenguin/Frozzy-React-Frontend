@@ -128,13 +128,16 @@ gap: 5px 5px;
 
 }
 
-div.card {
+.card {
  display: flex;
  flex-direction: column;
 justify-content: flex-start;
   border-radius:  60px;
  height: 325px;
+background-color: white;
+color: #151515;
 }
+
 .profile-picture {
   border-radius: 200px;
 }     
@@ -153,7 +156,7 @@ justify-content: flex-start;
   margin: auto;
   margin-top: 3%;
   text-align: center;
-  background:    rgb(237, 237, 237, .35);
+  background:    white;
   border-radius: 5px;
   padding: 5px;
 }
