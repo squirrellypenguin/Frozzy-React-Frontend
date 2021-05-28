@@ -200,37 +200,88 @@ height: 35px;
   border: 1px solid var(--main-black)
 }
 
-#edit {
+/* ////////////////////////////////////// FOOTER PAGE STYLING ////////////////////////////////// */
+nav {
+  /* border: 2px solid red; */
   position: relative;
-  bottom: 45px;
-  border: none;
-  height: 40px;
-  border-radius: 10px;
-  padding: 10px;
-  background: var(--main-red);
-  color: var(--main-white);
-  font-family: 'Montserrat'; 
-}
-#edit:hover {
-  background: var(--main-black);
-  border: 1px solid var(--main-grey)
+  top: 600px; 
+  z-index: 1;
+  background-color: var(--main-black);
 }
 
-#delete {
-  border: 1px solid var(--main-red);
-  height: 40px;
-  border-radius: 20px;
-  padding-left: 20px;
-  padding-top: 20px;
-  padding-right: 20px;
-  padding-bottom: 35px;
-  background: black;
-  color: var(--main-red);
-  font-family: 'Montserrat'; 
-  margin-left: 10px;
+
+#footer-container {
+  /* border: 1px solid red; */
+  height: 80px;
+  width: 90%;
+  /* margin: 0 auto; */
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  background-color: var(--main-black);
+  margin-top:125px;
 }
-#delete:hover {
-  color:#ededed;
-  background: var(--main-red);
-  border: 1px solid var(--main-black)
+
+
+@media only screen and (min-width: 600px) {
+
+#footer-container {
+  /* border: 1px solid red; */
+  height: 50px;
+  width: 90%;
+  /* margin: 0 auto; */
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  background-color: var(--main-black);
+  /* margin-top:-550px; */
+}
+}
+.footer-buttons {
+  /* border: 2px solid hotpink; */
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px;
+}
+
+
+.footer-icon {
+  border: none;
+  /* border: 2px solid red; */
+  margin: 0 auto; 
+  background: none;
+  transform: scale(.8)
+}
+
+.footer-copy {
+  /* border: 2px solid red; */
+  color: var(--main-grey);
+  text-align: center;
+  margin: 0;
+  font-size: 1em;
+  position: relative;
+  bottom: 5px;
+}
+.footer-buttons p, p:hover, p:focus, p:active {
+  /* color: red; */
+  text-decoration: none;  
+}
+
+
+
+
+
+
+
+#footer-home-button-container {
+  /* border: 2px solid red; */
+  display: flex;
+  justify-content: center;
+  /* width: 40%; */
+  /* height: 40%; */
+  margin: 0 auto;
+  position: relative;
+  bottom: 30px;
 }
