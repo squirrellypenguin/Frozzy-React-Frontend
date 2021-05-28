@@ -227,14 +227,14 @@ nav {
 
 #footer-container {
   /* border: 1px solid red; */
-  height: 50px;
+  height: 80px;
   width: 90%;
   /* margin: 0 auto; */
   display: flex;
   justify-content: space-between;
   position: fixed;
   background-color: var(--main-black);
-  /* margin-top:-550px; */
+  margin-top:-550px;
 }
 }
 .footer-buttons {
