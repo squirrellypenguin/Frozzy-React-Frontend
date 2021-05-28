@@ -165,7 +165,7 @@ background-color: var(--main-black);
 #ic-price {
   /* border: 2px solid red; */
   color: var(--main-white);
-  width: 150px;
+  width: 120px;
   text-align: center;
   position: relative;
   left: 210px;
@@ -322,7 +322,9 @@ background-color: var(--main-black);
 /* ////////////////////////////////////// FOOTER PAGE STYLING ////////////////////////////////// */
 
 
-
+#footer-container{
+  border: 2px solid red;
+}
 
 
 .footer-buttons {
@@ -420,8 +422,18 @@ background-color: var(--main-black);
 
 
                   /* Checkout page */
-#c-cart-heading, #c-fave-heading {
-  margin: 70px 10px 10px 10px;
+#c-favorites-heading {
+  /* border: 2px solid red; */
+  margin: 20px 10px 10px 10px;
+  position: relative;
+  color: var(--main-white);
+  text-align: left;
+  font-family: 'Montserrat'; 
+}
+
+#c-cart-heading {
+  /* border: 2px solid red; */
+  margin: 0px 10px 10px 10px;
   position: relative;
   color: var(--main-white);
   text-align: left;
@@ -451,18 +463,17 @@ background-color: var(--main-black);
   position: relative;
   left: -0px;
   overflow: hidden;
-  border-radius: 5px;
-
+  border-radius: 15px;
 }
 
 #cart-image {
-  border: 2px solid red;
+  /* border: 2px solid red; */
   /* height: 90px; */
   /* width: 90px; */
   /* transform: scale(.2); */
   /* background: cover; */
   /* overflow: hidden; */
-  transform: scale(.25);
+  transform: scale(.45);
 }
 
 #cart-ic-name {
@@ -481,6 +492,7 @@ background-color: var(--main-black);
   display: flex;
   position: relative;
   left: 120px;
+  width: 20%;
   bottom: 95px;
 
 }
@@ -506,17 +518,25 @@ background-color: var(--main-black);
 }
 
 #cart-cost-container {
-  border: 2px solid white;
+  /* border: 2px solid red; */
   background-color: var(--main-white);
+  height: 40px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   position: relative;
   bottom: 20px;
 }
+/* #cart-cost-container  */
+#cart-ic-cost-name {
+  display: flex;
+  margin-left: 10px; 
+  width: 200px;
+}
 
-#cart-ic-cost-name, #cart-ic-cost {
-  color: var(--main-black);
-  margin: 10px 80px 10px 20px;
+#cart-ic-cost {
+  /* border: 2px solid red; */
+  margin-right: 30px;
 }
 
 #cart-checkout-button-container{

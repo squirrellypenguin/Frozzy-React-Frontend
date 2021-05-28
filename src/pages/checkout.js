@@ -26,8 +26,8 @@ const Checkout = (props) => {
 
 const loaded = () => (
 <div>
-<div style={{textAlign: "center"}}>
-        <h1 id="c-cart-heading">My Past Faves!</h1>
+{/* <div style={{textAlign: "center"}}>
+        <h1 id="c-favorites-heading">My Past Faves!</h1>
         {cart.map((fave, index) => {
 
         let average = fave.rating.reduce(function (sum, value) {
@@ -43,7 +43,7 @@ const loaded = () => (
                  <img src={fave.img}/>
                  </div>
              </div>
-            </div>
+           
          
               <h3 id="cart-ic-name">{fave.name}</h3>
               <div id="cart-star-container">
@@ -55,13 +55,13 @@ const loaded = () => (
                  <p id="cart-ic-cost">${fave.cost}</p>
              </div>
              <div id="cart-delete-button-container">
-                 {/* <button id='cart-delete-button' 
+                 <button id='cart-delete-button' 
                  onClick={() =>{
                     removeFromCart(index)
-                }}>Remove</button> */}
-
+                }}>Remove</button>
              </div>
- 
+             <hr/>
+             </div>
            
          </>
 
@@ -69,7 +69,7 @@ const loaded = () => (
         
 })}
            
-</div>
+</div> */}
 
     
 
@@ -108,10 +108,7 @@ const loaded = () => (
                     removeFromCart(index)
                 }}>Remove</button>
              </div>
- 
-           
          </>
-
          )
         
 })}
@@ -134,9 +131,8 @@ const loading = () => {
 return (
 
 <div>
-<Footer />
-<h1 style={{color:'white'}}> Add some items first!</h1>
-        </div>
+    <h1 style={{color:'white'}}> Add some items first!</h1>
+</div>
 )}
 
 const body = cart.length || favorite.length > 0 ? loaded() : loading()
@@ -144,7 +140,7 @@ const body = cart.length || favorite.length > 0 ? loaded() : loading()
 return (
     <div>
     <Footer />
-{body}
+    {body}
 </div>
 
     )
