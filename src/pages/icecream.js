@@ -45,9 +45,8 @@ let creems = props.creems
         <div id='ic-image-container'>
           <img src={creem.img} id='ic-photo'/>
           <div>
-          <button className='fav-icon' id="fave" onClick={() => props.selectFavorite(creem, index)}> </button>
-           
-          </div>
+          <button className='fav-icon' id="fave" onClick={() => props.selectFavorite(creem, index)}> </button> 
+        </div>
         </div>
         <article id='ic-name'>
           <h2>{creem.name}</h2>

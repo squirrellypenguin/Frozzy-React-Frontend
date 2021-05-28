@@ -252,6 +252,7 @@ background-color: var(--main-black);
 }
 
 #shop-image {
+  border: 2px solid yellow;
   transform: scale(.8);
   /* object-fit: contain; */
   /* display: block; */
@@ -358,11 +359,6 @@ background-color: var(--main-black);
 }
 
 
-
-
-
-
-
 #footer-home-button-container {
   /* border: 2px solid red; */
   display: flex;
@@ -383,13 +379,12 @@ background-color: var(--main-black);
 }
 
 #edit {
+  position: relative;
+  bottom: 45px;
   border: none;
   height: 40px;
-  border-radius: 20px;
-  padding-left: 20px;
-  padding-top: 20px;
-  padding-right: 20px;
-  padding-bottom: 35px;
+  border-radius: 10px;
+  padding: 10px;
   background: var(--main-red);
   color: var(--main-white);
   font-family: 'Montserrat'; 
@@ -575,6 +570,107 @@ background-color: var(--main-black);
 }
 
 
+/* /////////////////////////////////////////////////////////////////// */
+@media screen and (min-width: 768px) {
+  #shop-section {
+    width: 60%;
+    margin: 0 auto;
+  } 
 
+  #shop-image-container{
+    /* border: 2px solid blue; */
+  }
+
+  #shop-image {
+    /* border: 2px solid hotpink; */
+  }
+
+  #see-ic-button{
+    /* border:2px solid blue; */
+    position: relative;
+    left: -170px;
+    /* margin-left: -1030px; */
+  }
+  
+  #shop-img {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    width: 1110px;
+
+  }
+
+  #page-container {
+    /* border: 2px solid red; */
+    width: 60%;
+    margin: 0 auto;
+    border-radius: 20px;
+  }
+
+  #ic-photo {
+    /* border: 2px solid red; */
+    height: auto;
+    width: 100%;
+    border-radius: 20px;
+  }
+
+  #ic-description-container {
+    /* border: 2px solid blue; */
+    margin: 0;
+  }
+
+  #footer-container {
+    /* border: 2px solid red; */
+    display: flex;
+    align-items: center;
+    position: relative;
+    bottom: 730px;
+    height: 100px;
+   
+
+  }
+
+  #home-button{
+    /* border: 2px solid blue; */
+    position: relative;
+    top: 33px;
+    transform: scale(1.5);
+  }
+}
+
+/* ///////////////////////////////////////////////////////////////// */
+
+@media screen and (min-width: 1024px) {
+  #shop-section {
+    width: 60%;
+    margin: 0 auto;
+  }
+  #shop-image-container{
+    /* border: 2px solid blue; */
+
+  }
+
+  #shop-image {
+    /* border: 2px solid hotpink; */
+    height: 500px;
+    width: 800px;
+  }
+
+  #see-ic-button{
+    /* border:2px solid blue; */
+    position: relative;
+    left: -240px;
+    /* margin-left: -1030px; */
+  }
+
+  #shop-img{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    width: 1400px;
+  }
+
+
+}
 
 
