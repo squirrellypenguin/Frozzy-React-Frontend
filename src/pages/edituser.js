@@ -20,9 +20,10 @@ const Edituser = (props) => {
      <div  > 
          <Footer />
       
-         <input id="main-login-button" type="submit" value={props.label} />
+         <
     <div className="container">
     <form onSubmit={handleSubmit}>
+    <input id="main-login-button" type="submit" value={props.label} />
 <ul className="form">
     <li><input
         placeholder="First"
