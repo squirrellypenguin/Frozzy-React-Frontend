@@ -36,10 +36,10 @@ const Shop = (props) => {
 
     return (
       <div  key={index}>
-        <section id="shop-section">
+        <section>
           <div id='shop-image-container'>
             <div id='shop-image'>
-              <img id='shop-img'src={shop.img}/>
+              <img src={shop.img}/>
             </div>
           </div>
           <div id='shop-name'>
