@@ -19,7 +19,6 @@ const Edituser = (props) => {
   return (
      <div  > 
          <Footer />
-       <a href="./main/user/"  style={{color: '#EE4540',textDecoration:'none',display:'inline'}}>BACK</a>
        <h1 className="form-header stroke-me"> Update Registration: </h1>
     <div className="container">
     <form onSubmit={handleSubmit}>
