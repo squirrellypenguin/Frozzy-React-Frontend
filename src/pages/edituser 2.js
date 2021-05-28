@@ -85,4 +85,4 @@ const Edituser = (props) => {
   );
 };
 
-export default Edituser;
+export default Edituser2;

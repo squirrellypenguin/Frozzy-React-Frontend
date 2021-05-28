@@ -44,4 +44,4 @@ console.log(props.users)
   )
 };
 
-export default User;
+export default User2;

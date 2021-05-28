@@ -9,7 +9,7 @@ const Edituser = (props) => {
       console.log("submit")
     event.preventDefault(); // Prevent Form from Refreshing
     props.handleSubmit(formData); // Submit to Parents desired function
-    props.history.push("/user"); //Push back to display page
+    props.history.push("/main/user"); //Push back to display page
   };
 
   const handleChange = (event) => {
@@ -18,8 +18,10 @@ const Edituser = (props) => {
 
   return (
      <div  > 
-       <Footer />
-       <input id="main-login-button" type="submit" value={props.label} />    <div className="container">
+         <Footer />
+       <a href="./main/user/"  style={{color: '#EE4540',textDecoration:'none',display:'inline'}}>BACK</a>
+       <h1 className="form-header stroke-me"> Update Registration: </h1>
+    <div className="container">
     <form onSubmit={handleSubmit}>
 <ul className="form">
     <li><input
@@ -94,7 +96,7 @@ const Edituser = (props) => {
       /></li>
       </ul>
 
-            
+               <input id="main-login-button" type="submit" value={props.label} />
     </form>
 
     </div>
