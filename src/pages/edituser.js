@@ -19,7 +19,8 @@ const Edituser = (props) => {
   return (
      <div  > 
          <Footer />
-       <h1 className="form-header stroke-me"> Update Registration: </h1>
+      
+         <input id="main-login-button" type="submit" value={props.label} />
     <div className="container">
     <form onSubmit={handleSubmit}>
 <ul className="form">
@@ -95,7 +96,6 @@ const Edituser = (props) => {
       /></li>
       </ul>
 
-               <input id="main-login-button" type="submit" value={props.label} />
     </form>
 
     </div>

@@ -380,11 +380,11 @@ background-color: var(--main-black);
 
 #edit {
   position: relative;
-  bottom: 45px;
-  border: none;
-  height: 40px;
-  border-radius: 10px;
-  padding: 10px;
+  border-radius: 20px;
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 15px;
   background: var(--main-red);
   color: var(--main-white);
   font-family: 'Montserrat'; 
@@ -401,7 +401,7 @@ background-color: var(--main-black);
   padding-left: 20px;
   padding-top: 20px;
   padding-right: 20px;
-  padding-bottom: 35px;
+  padding-bottom: 30px;
   background: black;
   color: var(--main-red);
   font-family: 'Montserrat'; 
