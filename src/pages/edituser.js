@@ -18,12 +18,10 @@ const Edituser = (props) => {
 
   return (
      <div  > 
-         <Footer />
-      
-         <
-    <div className="container">
+       <div className="container">
     <form onSubmit={handleSubmit}>
-    <input id="main-login-button" type="submit" value={props.label} />
+         <input id="main-login-button" type="submit" value={props.label} />
+   
 <ul className="form">
     <li><input
         placeholder="First"
